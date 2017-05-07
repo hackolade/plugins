@@ -1,0 +1,55 @@
+{
+	"string": {
+		"item": "input",
+		"type": "text"
+	},
+	"numeric": {
+		"item": "input",
+		"type": "text",
+		"regexp": "numeric",
+		"errMessage": "Incorrect numeric format. Must be number for integer or dot separated for double"
+	},
+	"boolean": {
+		"item": "select",
+		"options": ["", "true", "false"]
+	},
+	"objectId": {
+		"item": "input",
+		"type": "text",
+		"regexp": "objectId",
+		"errMessage": "Incorrect format of ObjectId. It must consist of both digits and letters. Total length must be 24."
+	},
+	"collectionName": {
+		"item": "input",
+		"type": "text",
+		"errMessage": "Table name must be between 3 and 255 characters long. (A-Z,a-z,0-9,_,-,.)",
+		"reservedWords": "This word is reserved."
+	},
+	"databaseName": {
+		"item": "input",
+		"type": "text",
+		"errMessage": "Database names cannot contain any of the following characters: ",
+		"reservedWords": "This word is reserved."
+	},
+	"name": {
+		"item": "input",
+		"type": "text",
+		"errMessage": "Incorrect attribute name",
+		"reservedWords": "This word is reserved."
+	},
+	"readCapacity": {
+		"item": "input",
+		"type": "text",
+		"errMessage": "Incorrect capacity value"
+	},
+	"writeCapacity": {
+		"item": "input",
+		"type": "text",
+		"errMessage": "Incorrect capacity value"
+	},
+	"endPoint": {
+		"item": "input",
+		"type": "text",
+		"errMessage": "Incorrect link"
+	}
+}

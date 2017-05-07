@@ -1,0 +1,11 @@
+{
+	"map": "{...}",
+	"list": "[...]",
+	"string": "{ABC}",
+	"int": "{123}",
+	"long": "{123}",
+	"double": "{12.3}",
+	"bool": "{0/1}",
+	"bytes": "{BYTES}",
+	"null": "{null}"
+}

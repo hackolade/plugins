@@ -1,0 +1,39 @@
+[
+	{
+		"modeName": "Details",
+		"structure": [
+			{
+				"fieldName": "DB vendor",
+				"fieldKeyword": "dbVendor",
+				"shouldValidate": false,
+				"fieldTooltip": "db vendor",
+				"fieldType": "select",
+				"options": [
+					"MonStor"
+				],
+				"changeAction": "changeDbVendorOfModel",
+				"disabledOption": true
+			},
+			{
+				"fieldName": "DB version",
+				"fieldKeyword": "dbVersion",
+				"shouldValidate": false,
+				"fieldTooltip": "db version",
+				"fieldType": "select",
+				"options": [
+					"v1.0"
+				],
+				"changeAction": "changeDbVersionOfModel"
+			},
+			{
+				"fieldName": "Comments",
+				"fieldKeyword": "comments",
+				"shouldValidate": false,
+				"fieldTooltip": "comments",
+				"fieldType": "details",
+				"template": "textarea",
+				"changeAction": "changeCommentsOfModel"
+			}
+		]
+	}
+]

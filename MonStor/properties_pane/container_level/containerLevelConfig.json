@@ -1,0 +1,61 @@
+[
+	{
+		"modeName": "Details",
+		"structure": [
+			{
+				"fieldName": "Keyspace name",
+				"fieldKeyword": "name",
+				"shouldValidate": false,
+				"fieldType": "text",
+				"changeAction": "renameBucket"
+			},
+			{
+				"fieldName": "Shard ID",
+				"fieldKeyword": "shardId",
+				"shouldValidate": false,
+				"fieldType": "text",
+				"changeAction": "changeBucketProperty"
+			},
+			{
+				"fieldName": "Per node RAM",
+				"fieldKeyword": "ramQuota",
+				"shouldValidate": false,
+				"fieldTooltip": "Per node RAM quota",
+				"fieldType": "text",
+				"labelOffset": 50,
+				"changeAction": "changeBucketRamQuota"
+			},
+			{
+				"fieldName": "Access control",
+				"fieldKeyword": "accessControl",
+				"shouldValidate": false,
+				"fieldTooltip": "cash metadata",
+				"fieldType": "select",
+				"options": [
+					"Standart port",
+					"Dedicated port"
+				],
+				"changeAction": "changeBucketAccessControl"
+			},
+			{
+				"fieldName": "Description",
+				"fieldKeyword": "description",
+				"shouldValidate": false,
+				"fieldTooltip": "description",
+				"fieldType": "details",
+				"template": "textarea",
+				"changeAction": "changeBucketDescription"
+			},
+			{
+				"fieldName": "Comments",
+				"fieldKeyword": "comments",
+				"shouldValidate": false,
+				"fieldTooltip": "comments",
+				"fieldType": "details",
+				"template": "textarea",
+				"changeAction": "changeBucketComments"
+			}
+		],
+		"importentFields": []
+	}
+]

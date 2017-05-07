@@ -1,0 +1,6 @@
+{
+	"name": "list",
+	"parentType": "array",
+	"sample": ["sample"],
+	"useSample": true
+}

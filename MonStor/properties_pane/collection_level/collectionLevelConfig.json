@@ -1,0 +1,62 @@
+[
+	{
+		"modeName": "Details",
+		"structure": [
+			{
+				"fieldName": "Comments",
+				"fieldKeyword": "comments",
+				"shouldValidate": false,
+				"fieldTooltip": "comments",
+				"fieldType": "details",
+				"template": "textarea",
+				"changeAction": "changeCommentsOfCollection"
+			},
+			{
+				"fieldName": "Label",
+				"fieldKeyword": "lable",
+				"shouldValidate": true,
+				"fieldType": "text",
+				"changeAction": "changeCollectionProperty"
+			}
+		]
+	},
+	{
+		"modeName": "Users",
+		"structure": [
+			{
+				"fieldName": "User",
+				"fieldType": "group",
+				"fieldKeyword": "collectionUsers",
+				"shouldValidate": false,
+				"fieldTooltip": "user",
+				"addAction": "addCollectionUser",
+				"removeAction": "removeUser",
+				"structure": [
+					{
+						"fieldName": "User name",
+						"fieldKeyword": "name",
+						"shouldValidate": false,
+						"fieldTooltip": "user",
+						"fieldType": "text",
+						"changeAction": "renameCollectionUser"
+					},
+					{
+						"fieldName": "Read",
+						"fieldKeyword": "read",
+						"shouldValidate": false,
+						"fieldType": "checkbox",
+						"changeAction": "changeReadPropOfCollectionUser"
+					},
+					{
+						"fieldName": "Read/write",
+						"fieldKeyword": "readWrite",
+						"shouldValidate": false,
+						"fieldType": "checkbox",
+						"changeAction": "changeReadWritePropOfCollectionUser"
+					}
+				]
+			}
+		],
+		"disabled": false
+	}
+]

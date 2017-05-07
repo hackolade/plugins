@@ -1,0 +1,29 @@
+{
+	"string": {
+		"abbr": "<str>"
+	},
+	"int": {
+		"abbr": "<int>"
+	},
+	"long": {
+		"abbr": "<long>"
+	},
+	"double": {
+		"abbr": "<double>"
+	},
+	"list": {
+		"abbr": "<list>"
+	},
+	"bool": {
+		"abbr": "<bool>"
+	},
+	"null": {
+		"abbr": "<null>"
+	},
+	"bytes": {
+		"abbr": "<byt>"
+	},
+	"map": {
+		"abbr": "<map>"
+	}
+}

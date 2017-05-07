@@ -1,0 +1,22 @@
+{
+	"contain" : { 
+	},
+	"childOf": {
+		"map": "document",
+		"int": "number",
+		"long": "number",
+		"double": "number",
+		"list": "array",
+		"bytes": "binary",
+		"bool": "boolean",
+		"date": "string"
+	},
+	"parentTo": {
+		"array" : ["list"],
+		"document" : ["map"],
+		"number" : ["double", "int", "long"],
+		"binary" : ["bytes"],
+		"boolean" : ["bool"],
+		"string": ["date"]
+	}
+}
