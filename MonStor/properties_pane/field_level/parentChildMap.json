@@ -3,9 +3,7 @@
 	},
 	"childOf": {
 		"map": "document",
-		"int": "number",
-		"long": "number",
-		"double": "number",
+		"number": "numeric",
 		"list": "array",
 		"bytes": "binary",
 		"bool": "boolean",
@@ -14,9 +12,16 @@
 	"parentTo": {
 		"array" : ["list"],
 		"document" : ["map"],
-		"number" : ["double", "int", "long"],
+		"numeric" : ["number"],
 		"binary" : ["bytes"],
 		"boolean" : ["bool"],
 		"string": ["date"]
+	},
+	"modeMap": {
+		"number": {
+			"int": "integer32",
+			"double": "integer64",
+			"long": "double"
+		}
 	}
 }

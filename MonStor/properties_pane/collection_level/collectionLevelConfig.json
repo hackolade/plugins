@@ -13,7 +13,7 @@
 			},
 			{
 				"fieldName": "Label",
-				"fieldKeyword": "lable",
+				"fieldKeyword": "label",
 				"shouldValidate": true,
 				"fieldType": "text",
 				"changeAction": "changeCollectionProperty"

@@ -1,0 +1,11 @@
+{
+	"name": "number",
+	"parentType": "numeric",
+	"sample": 15,
+	"useSample": true,
+	"mode": {
+		"int": 12,
+		"long": 15,
+		"double": 32.02
+	}
+}

@@ -4,7 +4,7 @@
 		"dbVersion": "v1.0",
 		"dbVendor": "MonStor"
 	},
-	"bucket": {
+	"container": {
 		"name": "New keyspace"
 	},
 	"collection": {

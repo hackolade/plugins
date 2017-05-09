@@ -2,17 +2,11 @@
 	"string": {
 		"abbr": "<str>"
 	},
-	"int": {
-		"abbr": "<int>"
-	},
-	"long": {
-		"abbr": "<long>"
-	},
-	"double": {
-		"abbr": "<double>"
-	},
 	"list": {
 		"abbr": "<list>"
+	},
+	"number": {
+		"abbr": "<num>"
 	},
 	"bool": {
 		"abbr": "<bool>"
