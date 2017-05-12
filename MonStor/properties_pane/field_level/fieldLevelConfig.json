@@ -6,9 +6,9 @@
 			"name",
 			"sampleName",
 			"schemaId",
-			"childType",
+			"type",
 			"description",
-			"refPath",
+			"primaryKey",
 			"dependencies",
 			"required",
 			"foreignCollection",
@@ -28,7 +28,7 @@
 					"double"
 				],
 				"data": "options",
-				"changeAction": "changeModeOfField"
+				"valueType": "string"
 			},
 			"minimum",
 			"exclusiveMinimum",
@@ -49,7 +49,7 @@
 			"name",
 			"sampleName",
 			"schemaId",
-			"childType",
+			"type",
 			"refPath",
 			"description",
 			"required",

@@ -9,54 +9,15 @@
 				"fieldTooltip": "comments",
 				"fieldType": "details",
 				"template": "textarea",
-				"changeAction": "changeCommentsOfCollection"
+				"valueType": "string"
 			},
 			{
 				"fieldName": "Label",
 				"fieldKeyword": "label",
-				"shouldValidate": true,
+				"shouldValidate": false,
 				"fieldType": "text",
-				"changeAction": "changeCollectionProperty"
+				"valueType": "string"
 			}
 		]
-	},
-	{
-		"modeName": "Users",
-		"structure": [
-			{
-				"fieldName": "User",
-				"fieldType": "group",
-				"fieldKeyword": "collectionUsers",
-				"shouldValidate": false,
-				"fieldTooltip": "user",
-				"addAction": "addCollectionUser",
-				"removeAction": "removeUser",
-				"structure": [
-					{
-						"fieldName": "User name",
-						"fieldKeyword": "name",
-						"shouldValidate": false,
-						"fieldTooltip": "user",
-						"fieldType": "text",
-						"changeAction": "renameCollectionUser"
-					},
-					{
-						"fieldName": "Read",
-						"fieldKeyword": "read",
-						"shouldValidate": false,
-						"fieldType": "checkbox",
-						"changeAction": "changeReadPropOfCollectionUser"
-					},
-					{
-						"fieldName": "Read/write",
-						"fieldKeyword": "readWrite",
-						"shouldValidate": false,
-						"fieldType": "checkbox",
-						"changeAction": "changeReadWritePropOfCollectionUser"
-					}
-				]
-			}
-		],
-		"disabled": false
 	}
 ]

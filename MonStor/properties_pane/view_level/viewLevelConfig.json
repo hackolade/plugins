@@ -8,8 +8,7 @@
 				"shouldValidate": false,
 				"fieldTooltip": "comments",
 				"fieldType": "details",
-				"template": "textarea",
-				"changeAction": "changeViewProperty"
+				"template": "textarea"
 			}
 		]
 	}

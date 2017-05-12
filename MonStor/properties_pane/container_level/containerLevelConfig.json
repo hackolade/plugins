@@ -3,18 +3,10 @@
 		"modeName": "Details",
 		"structure": [
 			{
-				"fieldName": "Keyspace name",
-				"fieldKeyword": "name",
-				"shouldValidate": false,
-				"fieldType": "text",
-				"changeAction": "renameBucket"
-			},
-			{
 				"fieldName": "Shard ID",
 				"fieldKeyword": "shardId",
 				"shouldValidate": false,
-				"fieldType": "text",
-				"changeAction": "changeBucketProperty"
+				"fieldType": "text"
 			},
 			{
 				"fieldName": "Per node RAM",
@@ -22,8 +14,7 @@
 				"shouldValidate": false,
 				"fieldTooltip": "Per node RAM quota",
 				"fieldType": "text",
-				"labelOffset": 50,
-				"changeAction": "changeBucketRamQuota"
+				"labelOffset": 50
 			},
 			{
 				"fieldName": "Access control",
@@ -34,8 +25,7 @@
 				"options": [
 					"Standart port",
 					"Dedicated port"
-				],
-				"changeAction": "changeBucketAccessControl"
+				]
 			},
 			{
 				"fieldName": "Description",
@@ -43,8 +33,7 @@
 				"shouldValidate": false,
 				"fieldTooltip": "description",
 				"fieldType": "details",
-				"template": "textarea",
-				"changeAction": "changeBucketDescription"
+				"template": "textarea"
 			},
 			{
 				"fieldName": "Comments",
@@ -52,8 +41,7 @@
 				"shouldValidate": false,
 				"fieldTooltip": "comments",
 				"fieldType": "details",
-				"template": "textarea",
-				"changeAction": "changeBucketComments"
+				"template": "textarea"
 			}
 		],
 		"importentFields": []

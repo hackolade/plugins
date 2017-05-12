@@ -107,7 +107,6 @@
 	"date" : {
 		"type": "string",
 		"childType": "date",
-		"primaryKey": false,
 		"relationshipType": "",
 		"parentRelationship": "",
 		"childRelationships": [],

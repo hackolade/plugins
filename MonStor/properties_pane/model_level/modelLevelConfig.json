@@ -11,19 +11,17 @@
 				"options": [
 					"MonStor"
 				],
-				"changeAction": "changeDbVendorOfModel",
 				"disabledOption": true
 			},
 			{
 				"fieldName": "DB version",
-				"fieldKeyword": "dbVersion",
+				"fieldKeyword": "version",
 				"shouldValidate": false,
 				"fieldTooltip": "db version",
 				"fieldType": "select",
 				"options": [
 					"v1.0"
-				],
-				"changeAction": "changeDbVersionOfModel"
+				]
 			},
 			{
 				"fieldName": "Comments",
@@ -31,8 +29,7 @@
 				"shouldValidate": false,
 				"fieldTooltip": "comments",
 				"fieldType": "details",
-				"template": "textarea",
-				"changeAction": "changeCommentsOfModel"
+				"template": "textarea"
 			}
 		]
 	}

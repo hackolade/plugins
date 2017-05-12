@@ -1,5 +1,5 @@
 {
-	"name": "razor",
+	"name": "MonStor",
 	"version": "0.1.0",
 	"publisher": "hackolade",
 	"engines": {
@@ -9,13 +9,10 @@
 	"contributes": {
 		"target": {
 			"applicationTarget": "MONSTOR",
-			"name": "MonStor",
 			"title": "MonStor",
-			"click": "newFile",
 			"versions": [
 				"v1.0"
-			],
-			"link": "MONSTOR"
+			]
 		},
 		"features": {
 			"nestedCollections": true
