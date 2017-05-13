@@ -20,7 +20,7 @@
 	"modeMap": {
 		"number": {
 			"int": "integer32",
-			"double": "integer64",
+			"double": "double",
 			"long": "double"
 		}
 	}
