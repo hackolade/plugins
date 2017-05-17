@@ -1,6 +1,7 @@
 {
 	"plugins": [
 		{
+			"name": "MonStor",
 			"target": "MonStor",
 			"author": "hackolade",
 			"authorRepo": "https://github.com/hackolade",
