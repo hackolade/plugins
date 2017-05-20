@@ -5,8 +5,8 @@
 			"target": "MonStor",
 			"author": "hackolade",
 			"authorRepo": "https://github.com/hackolade",
-			"version": "0.1.0",
-			"versionDate": "2017-05-13",
+			"version": "0.1.2",
+			"versionDate": "2017-05-20",
 			"description": "Hackolade plugin for MonStor",
 			"repository": "https://github.com/hackolade/MonStor"
 		}
