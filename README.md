@@ -49,6 +49,7 @@ collection, attribute, indexing, sharding, etc...
 
 You can add the necessary property labels and control the input types.
 
+<img src="img/model_properties_pane.png" alt="model properties pane" width="30%" height="30%">
  
 
 You can also define the entity hierarchy of the database:
