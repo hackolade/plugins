@@ -47,7 +47,7 @@ With the customization of the properties pane, you’ll be able to control
 attributes specific to each DB at the following levels: model, container,
 collection, attribute, indexing, sharding, etc...
 
-![](img/model properties pane.png)
+![model properties pane](img/model_properties_pane.png)
 
 You can add the appropriate property labels and control the input types.
 
