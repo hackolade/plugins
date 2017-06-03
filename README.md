@@ -5,29 +5,21 @@ Repository for plugins to let new NoSQL document databases leverage the
 Hackolade data modeling engine, if they're not natively supported in Hackolade
 (yet.)
 
- 
-
 The plugin architecture of Hackolade lets you create your own NoSQL database
 ‘targets’, following its terminology, attributes, and storage model through the
 customization of the following modules:
 
 1.  properties panes
-
 2.  localization
-
 3.  data types
-
 4.  connection and authentication parameters (TBD)
-
 5.  reverse-engineering parameters for sampling and schema inference (TBD)
-
  
 
 This guide walks you through the steps necessary to create your own plugin in
 your github repository and test it. Once you’re ready to make your plugin
 public, you may create a pull request for your entry in the registry file in
 this repo.
-
  
 
 Overview
@@ -41,9 +33,7 @@ with the frequent appearance of new databases on the market. So, in order to
 unleash the power of our data modeling engine, we decided to rewrite the
 application and open up our features through a plugin architecture.
 
- 
-
-With the customization of the properties pane, you’ll be able to control
+With the customization of the properties pane, you're able to control
 attributes specific to each DB at the following levels: model, container,
 collection, attribute, indexing, sharding, etc...
 
@@ -54,46 +44,47 @@ You can add the necessary property labels and control the input types.
 
 You can also define the entity hierarchy of the database:
 
-![](img/localization.png)
+![localization](img/localization.png)
 
-  3. Field types
 
-![](img/a970787a1959e2daec00f462128b54c8.png)
-
-Each field type has its own set of properties and behaviours described in
+Each data type has its own set of properties and behaviour described in the
 configurations. Type changes affect UI of ERD (model view), DTD (collection
-view) and behaviour of context menu:
+tree view) and behaviour of the contextual menu:
+
+![field types](img/a970787a1959e2daec00f462128b54c8.png)
+
 
 ![](img/d4442fa0811c1d4953e9042df42ab147.png)
 
- 
+The easiest way to create a new plugin is to copy an existing one as a starting
+point, and to edit it progressively, verifying along the way that the desired behavior
+gets reflected in the application.  When choosing an existing plugin, make sure to
+take one with a storage model as cole as possible to yours.
+
 
 Plugin structure
 ----------------
 
-Plugins are stored in \~/**.hackolade/plugins** directory. Plugin folder name
-should be the same as **name** property in package.json file of your plugin.
-
-**package.json** file is the plugin entry point. This file is required and
+Plugins are stored in the \~/**.hackolade/plugins** directory. The plugin folder name
+should be the same as the **name** property in package.json file of your plugin.
+ 
+The **package.json** file is the plugin entry point. This file is required and
 contains initial info about plugin such as name, version, author, target name
-etc.. It should be placed in the root of your plugin folder. Package.json should
+etc..  It should be placed in the root of your plugin folder. Package.json should
 contain several required properties that guarantee its uniqueness:
 
 -   *Name*
-
 -   *Contributes*
-
 -   *Author*
 
 *See more details about each field of* [package.json](#package.json) *file.*
 
-**logo.jpg** - plugin logo image that will be displayed in the list of plugins.
-Name and extension of the file shouldn’t and cannot be changed. The file is
+**logo.jpg** - the plugin logo image that will be displayed in the list of plugins.
+Name and extension of the file cannot be changed. The file is
 placed in the root folder next to the package.json file. If not set - the first
 letter from **name** property in package.json file will be used instead of logo.
 
  
-
 [1] Properties pane structure
 -----------------------------
 
