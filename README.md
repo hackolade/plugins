@@ -48,6 +48,7 @@ attributes specific to each DB at the following levels: model, container,
 collection, attribute, indexing, sharding, etc...
 
 ![model properties pane](img/model_properties_pane.png){:height="50%" width="50%"}
+<img src="img/model_properties_pane.png" alt="model properties pane" width="50%" height="50%">
 
 You can add the appropriate property labels and control the input types.
 
