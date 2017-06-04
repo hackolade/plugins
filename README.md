@@ -10,17 +10,19 @@ The plugin architecture of Hackolade lets you create your own NoSQL database
 customization of the following modules:
 
 1.  properties panes
+
 2.  localization
+
 3.  data types
+
 4.  connection and authentication parameters (TBD)
-5.  reverse-engineering parameters for sampling and schema inference (TBD)
- 
+
+5.  reverse-engineering parameters for sampling and schema inference (TBD)  
 
 This guide walks you through the steps necessary to create your own plugin in
 your github repository and test it. Once you’re ready to make your plugin
 public, you may create a pull request for your entry in the registry file in
-this repo.
- 
+this repo.  
 
 Overview
 --------
@@ -33,60 +35,57 @@ with the frequent appearance of new databases on the market. So, in order to
 unleash the power of our data modeling engine, we decided to rewrite the
 application and open up our features through a plugin architecture.
 
-With the customization of the properties pane, you're able to control
-attributes specific to each DB at the following levels: model, container,
-collection, attribute, indexing, sharding, etc...
+With the customization of the properties pane, you're able to control attributes
+specific to each DB at the following levels: model, container, collection,
+attribute, indexing, sharding, etc...
 
 You can add the necessary property labels and control the input types.
 
 <img src="img/model_properties_pane.png" alt="model properties pane" width="30%" height="30%">
- 
 
 You can also define the entity hierarchy of the database:
 
 ![localization](img/localization.png)
 
-
 Each data type has its own set of properties and behaviour described in the
-configurations. Type changes affect UI of ERD (model view), DTD (collection
-tree view) and behaviour of the contextual menu:
+configurations. Type changes affect UI of ERD (model view), DTD (collection tree
+view) and behaviour of the contextual menu:
 
 ![field types](img/a970787a1959e2daec00f462128b54c8.png)
-
 
 ![](img/d4442fa0811c1d4953e9042df42ab147.png)
 
 The easiest way to create a new plugin is to copy an existing one as a starting
-point, and to edit it progressively, verifying along the way that the desired behavior
-gets reflected in the application.  When choosing an existing plugin, make sure to
-take one with a storage model as cole as possible to yours.
-
+point, and to edit it progressively, verifying along the way that the desired
+behavior gets reflected in the application. When choosing an existing plugin,
+make sure to take one with a storage model as cole as possible to yours.
 
 Plugin structure
 ----------------
 
-Plugins are stored in the \~/**.hackolade/plugins** directory. The plugin folder name
-should be the same as the **name** property in package.json file of your plugin.
- 
+Plugins are stored in the \~/**.hackolade/plugins** directory. The plugin folder
+name should be the same as the **name** property in package.json file of your
+plugin.
+
 The **package.json** file is the plugin entry point. This file is required and
 contains initial info about plugin such as name, version, author, target name
-etc..  It should be placed in the root of your plugin folder. Package.json should
+etc.. It should be placed in the root of your plugin folder. Package.json should
 contain several required properties that guarantee its uniqueness:
 
 -   *Name*
+
 -   *Contributes*
+
 -   *Author*
 
 *See more details about each field of* [package.json](#package.json) *file.*
 
-**logo.jpg** - the plugin logo image that will be displayed in the list of plugins.
-Name and extension of the file cannot be changed. The file is
-placed in the root folder next to the package.json file. If not set - the first
-letter from **name** property in package.json file will be used instead of logo.
+**logo.jpg** - the plugin logo image that will be displayed in the list of
+plugins. Name and extension of the file cannot be changed. The file is placed in
+the root folder next to the package.json file. If not set - the first letter
+from **name** property in package.json file will be used instead of logo.
 
- 
-[1] Properties pane structure
------------------------------
+  [1] Properties pane structure -----------------------------
 
 ![](img/b89a8e33ffe340d43324ae7fe7fe116b.png)
 
@@ -243,6 +242,11 @@ API Reference
 Package.json
 ------------
 
+The **package.json** file is the plugin entry point.  The mapping below shows
+how the information is used throughout the application.
+
+![](img/package_json.png)
+
 **name** *(string)* - required; unique plugin name
 
 **version** *(string)* - required; used to compare versions and provide
@@ -266,8 +270,8 @@ Example:
 
  
 
-**contributes** *(object)* - required; provides information about target and
-available features.
+**contributes** *(object)* - required; provides information about the database
+target and available features.
 
 Example:
 
@@ -300,7 +304,7 @@ Available features:
 
 **description** - optional; this data will be displayed in the list of plugins;
 
-**disabled** - optional; used to disable plugin; by default - false or nothing
+**disabled** - optional; used to mark the plugin as disabled; by default - false
 
  
 
@@ -356,13 +360,15 @@ type and behaviour.
 
  
 
-**fieldName** *(string)* - required; used to display label in PP for a field;
+**fieldName** *(string)* - required; used to display label in the Properties
+Panes for a property;
 
 **fieldKeyword** *(string)* - required; used in the main code as a keyword; no
 whitespaces are allowed; should be lowercase;
 
 **shouldValidate** *(string)* - optional; defines whether field should be
-validated or any value is allowed;
+validated or any value is allowed.  Validation ruels are defined in
+validationRegularExpressions.json;
 
 **fieldType** *(string)* - required; field types; can be simple or complex;
 simple types are select inputs or text inputs. Complex types usually use modal
