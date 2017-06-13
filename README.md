@@ -374,17 +374,53 @@ validationRegularExpressions.json;
 simple types are select inputs or text inputs. Complex types usually use modal
 windows; Available field types to use when customizing PP properties are:
 
+-   text
+
+![](img/e80a39f976829b955592912f8594bc08.png)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	"fieldType": "text"
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-   details (used to add a description or comments with defined template property,
+cfr below)
+
+![](img/738bc884e58aeaf2939379820e3a98a8.png)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    "fieldType": "details",
+	"template": "textarea"
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 -   select (used with **options** property)
 
 ![](img/ffca1885b1190f14c8f1b0733299b4de.png)
 
--   details (used to add description or comments with defined template property
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    "fieldType": "select",
+        "options": [
+		    "Public",
+		    "Restricted",
+		    "Confidential",
+		    "Internal"
+	    ]
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-![](img/738bc884e58aeaf2939379820e3a98a8.png)
+-   number (used to a numeric property, possibly with different modes)
 
--   text
 
-![](img/e80a39f976829b955592912f8594bc08.png)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	"fieldType": "text",
+	"valueType": "number"
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-   checkbox (used to add description or comments with defined template property
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    "fieldType": "checkbox"
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 
 **template** *(string)* - optional; template that is used in the modal window if
 fieldtype is complex
