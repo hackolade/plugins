@@ -1,6 +1,30 @@
 {
 	"plugins": [
 		{
+			"name": "Couchbase-Custom-Properties",
+			"target": "COUCHBASE",
+			"author": "hackolade",
+			"authorRepo": "https://github.com/hackolade",
+			"description": "Plugin to allow definition in Hackolade of custom properties for Couchbase target",
+			"repository": "https://github.com/hackolade/Couchbase-Custom-Properties"
+		},
+		{
+			"name": "DynamoDB-Custom-Properties",
+			"target": "DYNAMODB",
+			"author": "hackolade",
+			"authorRepo": "https://github.com/hackolade",
+			"description": "Plugin to allow definition in Hackolade of custom properties for DynamoDB target",
+			"repository": "https://github.com/hackolade/DynamoDB-Custom-Properties"
+		},
+		{
+			"name": "MongoDB-Custom-Properties",
+			"target": "MONGODB",
+			"author": "hackolade",
+			"authorRepo": "https://github.com/hackolade",
+			"description": "Plugin to allow definition in Hackolade of custom properties for MongoDB target",
+			"repository": "https://github.com/hackolade/MongoDB-Custom-Properties"
+		},
+		{
 			"name": "MonStor",
 			"target": "MonStor",
 			"author": "hackolade",
