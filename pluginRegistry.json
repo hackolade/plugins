@@ -1,7 +1,7 @@
 {
 	"plugins": [
 		{
-			"name": "Couchbase-Custom-Properties",
+			"name": "CouchbaseCustomProperties",
 			"target": "COUCHBASE",
 			"author": "hackolade",
 			"authorRepo": "https://github.com/hackolade",
@@ -9,7 +9,7 @@
 			"repository": "https://github.com/hackolade/Couchbase-Custom-Properties"
 		},
 		{
-			"name": "DynamoDB-Custom-Properties",
+			"name": "DynamoDBCustomProperties",
 			"target": "DYNAMODB",
 			"author": "hackolade",
 			"authorRepo": "https://github.com/hackolade",
@@ -17,7 +17,7 @@
 			"repository": "https://github.com/hackolade/DynamoDB-Custom-Properties"
 		},
 		{
-			"name": "MongoDB-Custom-Properties",
+			"name": "MongoDBCustomProperties",
 			"target": "MONGODB",
 			"author": "hackolade",
 			"authorRepo": "https://github.com/hackolade",
