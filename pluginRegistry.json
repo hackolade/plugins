@@ -9,6 +9,14 @@
 			"repository": "https://github.com/hackolade/CosmosDB-with-DocDB-API"
 		},
 		{
+			"name": "CosmosDB-with-MongoDB-API",
+			"target": "COSMOSDB-MONGO",
+			"author": "hackolade",
+			"authorRepo": "https://github.com/hackolade",
+			"description": "Hackolade plugin for Azure Cosmos DB with MongoDB API",
+			"repository": "https://github.com/hackolade/CosmosDB-with-MongoDB-API"
+		},
+		{
 			"name": "CouchbaseCustomProperties",
 			"target": "COUCHBASE",
 			"author": "hackolade",
