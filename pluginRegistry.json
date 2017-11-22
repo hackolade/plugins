@@ -17,6 +17,22 @@
 			"repository": "https://github.com/hackolade/CosmosDB-with-Mongo-API"
 		},
 		{
+			"name": "Elasticsearch",
+			"target": "ELASTICSEARCH",
+			"author": "hackolade",
+			"authorRepo": "https://github.com/hackolade",
+			"description": "Hackolade plugin for Elasticsearch",
+			"repository": "https://github.com/hackolade/Elasticsearch"
+		},
+		{
+			"name": "HBase",
+			"target": "HBase",
+			"author": "hackolade",
+			"authorRepo": "https://github.com/hackolade",
+			"description": "Hackolade plugin for Apache HBase",
+			"repository": "https://github.com/hackolade/HBase"
+		},
+		{
 			"name": "CouchbaseCustomProperties",
 			"target": "COUCHBASE",
 			"author": "hackolade",
