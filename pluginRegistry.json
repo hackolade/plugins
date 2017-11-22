@@ -14,7 +14,7 @@
 			"author": "hackolade",
 			"authorRepo": "https://github.com/hackolade",
 			"description": "Hackolade plugin for Azure Cosmos DB with MongoDB API",
-			"repository": "https://github.com/hackolade/CosmosDB-with-MongoDB-API"
+			"repository": "https://github.com/hackolade/CosmosDB-with-Mongo-API"
 		},
 		{
 			"name": "CouchbaseCustomProperties",
