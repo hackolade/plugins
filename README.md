@@ -46,7 +46,8 @@ You first need to carefully define the hierarchy for the database, and its relat
 
 ### <a name="prepTypes"></a>1.2 Data types
 Next, you need to define data types.  Many databases simply support the standard JSON data types.  Others have additional data types with special behaviors.  
-![field types](img/a970787a1959e2daec00f462128b54c8.png)
+
+<img src="img/a970787a1959e2daec00f462128b54c8.png" alt="data types" width="30%" height="30%">
 
 You may specify the order in which the data types appear.
 <br>
