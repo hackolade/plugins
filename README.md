@@ -1,4 +1,4 @@
-#Hackolade NoSQL DB data modeling plugins
+# Hackolade NoSQL DB data modeling plugins
 
 This is the repository for Hackolade plugins.  Plugins let anyone create support so new NoSQL databases can leverage the Hackolade data modeling engine, if they're not already natively supported in Hackolade.  Several plugins have been created by Hackolade for leading NoSQL databases, but you may build your own and have it listed in the DB Target Plugin Manager of the application.
 
@@ -14,7 +14,7 @@ The process includes 3 main steps:
 This guide walks you through the steps to create your own plugin in your own GitHub repository. Once you’re ready to make your plugin public, you may create a pull request for your entry in the registry file in this repository.  
 
 
-##<a name="preparation"></a>1. Overview and preparation
+## <a name="preparation"></a>1. Overview and preparation
 
 Each NoSQL document database has its own personality: terminology, storage
 approach, primary keys, data types, indexing, partitioning/sharding, API, query language, etc...
@@ -30,55 +30,55 @@ field/attribute, indexing, sharding, etc...
 
 The customization is performed through the configuration of the following modules:
 
-1.  localization
-2.  data types
-3.  properties panes
-4.  connection and authentication parameters
-5.  reverse-engineering parameters for sampling and schema inference
-6.  forward-engineering if the target DB supports it (TBA) 
+1.  [localization](#prepLocalization)
+2.  [data types](#prepTypes)
+3.  [properties panes](#prepPanes)
+4.  [connection and authentication](#prepConnection) parameters
+5.  [reverse-engineering](#prepRE) parameters for document sampling and schema inference
+6.  [forward-engineering](#prepFE) if the target DB supports it (TBA) 
 
  
-###<a name="prepLocalization"></a>1.1 Hierarchy and localization
+### <a name="prepLocalization"></a>1.1 Hierarchy and localization
 You first need to carefully define the hierarchy for the database, and its related terminology. Consider some differences between the MongoDB and the Couchbase hierarchies, for example:
 
 ![Hierarchy and localization](img/localization.png)
 <br>
 
-###<a name="prepTypes"></a>1.2 Data types
+### <a name="prepTypes"></a>1.2 Data types
 Next, you need to define data types.  Many databases simply support the standard JSON data types.  Others have additional data types with special behaviors.  
 ![field types](img/a970787a1959e2daec00f462128b54c8.png)
 
 You may specify the order in which the data types appear.
 <br>
 
-###<a name="prepPanes"></a>1.3 Properties pane
+### <a name="prepPanes"></a>1.3 Properties pane
 Each data type can inherit default properties and constraints from the standard
 Hackolade configurations.  But you may want to create additional properties and constraints for some data types.  To define these properties and controls, you may choose among different controls:
 
-<img src="img/Custom-props.png" alt="property controls" width="45%" height="45%">
+<img src="img/Custom-props.png" alt="property controls" width="30%" height="30%">
 
 The same controls can be used to define information in different properties panes and lower tabs, for example for indexing, sharding, etc..
 <br>
 
 
-###<a name="prepConnection">1.4 Connection and authentication parameters
+### <a name="prepConnection">1.4 Connection and authentication parameters
 In order for reverse-engineering to be performed, it is first necessary to connect to the database.  You need to define the protocol, connection parameters, and authentication parameters.
 ![Connection settings dialog](img/connection_settings_modal.png)
 <br>
 
 
-###<a name="prepRE"></a>1.5 Reverse-engineering
+### <a name="prepRE"></a>1.5 Reverse-engineering
 For Reverse-Engineer to be performed, it is required to write custom JavaScript code.  
 This code will connect to the database according to the connection parameters defined above.  It will also invoke queries to discover the database objects so the user can select what needs to be reverse-engineered. Finally, the code will query the database to obtain a sample and pass it on to Hackolade's engine for schema inference.
 <br>
 
 
-###<a name="prepFE"></a>1.6 Forward-engineering (TBA)
+### <a name="prepFE"></a>1.6 Forward-engineering (TBA)
 
 <br>
 <br>
 
-##<a name="creation"></a>2. Plugin creation
+## <a name="creation"></a>2. Plugin creation
 
 The easiest way to create a new plugin is to copy an existing one as a starting
 point, and to edit it progressively, verifying along the way that the desired
@@ -90,10 +90,19 @@ It is **strongly** suggested to operate carefully, progressing with small steps,
 Plugins are stored in the **%userprofile%/.hackolade/plugins** directory. The plugin folder name must be the same as the **name** property in package.json file of your
 plugin.
 
- 
+The creation process follows these steps:
+
+1. [package.json file](#creaPackage)
+2. [logo file](#creaLogo)
+3. [localization file](#creaLocalization)
+4. [data types](#creaTypes)
+5. [properties panes](#creaPanes)
+6. [input controls](#creaControls)
+7. [reverse-engineering](#creaRE) 
+8. [forward-engineering](#creaFE) 
 
 
-###2.1 package.json
+### <a name="creaPackage"></a>2.1 package.json
 The **package.json** file is the plugin entry point. This file is required and
 contains initial info about plugin such as name, version, author, target name
 etc.. It must remain in the root of your plugin folder. 
@@ -158,13 +167,13 @@ Available features:
  
 
 
-###2.2 Logo file
+### <a name="creaLogo"></a>2.2 Logo file
 **logo.jpg** - the plugin logo image to be displayed in the list of plugins. Name and extension of the file cannot be changed. The file is placed in the root folder next to the package.json file. If not set - the first letter from **name** property in package.json file will be used instead of a logo.
 
  
 
 
-###2.3 Localization
+### <a name="creaLocalization"></a>2.3 Localization
 
 The localization folder contains files for language / target localization of the target database. Language localization can be implemented by creating **\*.json**
 files inside **localization** folder. File name for localization should
@@ -183,7 +192,7 @@ displayed.
 
  
 
-###2.4 Base data types
+### <a name="creaTypes"></a>2.4 Base data types
 
 There are 7 base types in Hackolade:
 
@@ -259,7 +268,7 @@ different and custom for each type
  
 
 
-###2.5 Properties pane structure
+### <a name="creaPanes"></a>2.5 Properties pane structure
 There are multiple levels in the Hackolade hierarchy:
 
 1.  model: each Hackolade file represents one model for a given DB target
@@ -270,7 +279,7 @@ There are multiple levels in the Hackolade hierarchy:
 
 The properties pane can be configured for each level.  And each level can have multiple properties pane tabs.
 
-####2.5.1 Hierarchy
+#### 2.5.1 Hierarchy
 All configurations are stored in the **properties_pane** sub-folder of the plugin folder. Each level has its own sub-folder with corresponding naming:
 
 -   **model_level**
@@ -286,7 +295,7 @@ Inside each folder there’s a **[LEVELNAME]LevelConfig.json** file which contai
 You can add **defaultData.json** file to a **properties_pane** folder to define
 default values to be displayed in the properties pane. 
 
-####2.5.2 Lower tab properties pane
+#### 2.5.2 Lower tab properties pane
 Each **\*.json** file represents an array with objects. Each object has
 configurations for a particular tab. Tab name is defined in **lowerTab** property.
 All properties are defined as an array and have the same structure across all properties pane configurations. Here’s an example of details tab with one property **comments:**
@@ -319,7 +328,7 @@ All properties are defined as an array and have the same structure across all pr
 type and behavior.
 
 
-####2.5.3. Container Level Keys
+#### 2.5.3. Container Level Keys
 Container Level Keys - fields which are the keys at the container level and automatically added to entities when they are created. They are defining at **containerLevelConfig** by property **containerLevelKeys**. For example:
 
 	{
@@ -328,7 +337,7 @@ Container Level Keys - fields which are the keys at the container level and auto
     	"lowerTab": "..."
 	}
 
-Setting container level keys has the similar structure to [Property controls](#propControls). For example key with name "Index":
+Setting container level keys has the similar structure to [Property controls](#creaControls). For example key with name "Index":
 
 	{
     	"containerLevelKeys": [{
@@ -370,7 +379,7 @@ Setting container level keys has the similar structure to [Property controls](#p
  
 
 
-###<a name="propControls"></a>2.6 Property controls
+### <a name="creaControls"></a>2.6 Property controls
 
 Different input controls can be defined for each property:
 
@@ -418,7 +427,7 @@ validation rules.
 
 For your properties, you may choose among a number of input controls:
 
-####<a name="text"></a>2.6.1. simple text
+#### <a name="text"></a>2.6.1. simple text
 
 ![](img/e80a39f976829b955592912f8594bc08.png)
 
@@ -430,7 +439,7 @@ For your properties, you may choose among a number of input controls:
 	}
 
 
-####<a name="details"></a>2.6.2. text area (pop-up box)
+#### <a name="details"></a>2.6.2. text area (pop-up box)
 Used to add a description or comments with defined template property
 
 ![](img/738bc884e58aeaf2939379820e3a98a8.png)
@@ -446,7 +455,7 @@ Used to add a description or comments with defined template property
 
 ![](img/4990cf2683f7599d406ff0fef9eec6a6.png)
 
-####<a name="select"></a>2.6.3. dropdown selection
+#### <a name="select"></a>2.6.3. dropdown selection
 
 ![](img/ffca1885b1190f14c8f1b0733299b4de.png)
 
@@ -464,7 +473,7 @@ Used to add a description or comments with defined template property
 		]
 	}
 
-####<a name="numeric"></a>2.6.4. numeric
+#### <a name="numeric"></a>2.6.4. numeric
 
 
 ![](img/numeric.png)
@@ -479,7 +488,7 @@ Used to add a description or comments with defined template property
 	},
 
 
-####<a name="checkbox"></a>2.6.5. checkbox (boolean)
+#### <a name="checkbox"></a>2.6.5. checkbox (boolean)
 
 
 ![](img/checkbox.png)
@@ -491,7 +500,7 @@ Used to add a description or comments with defined template property
 	},
 
 
-####<a name="group"></a>2.6.6. properties group
+#### <a name="group"></a>2.6.6. properties group
 
 ![](img/propgrp.png)
 
@@ -519,7 +528,7 @@ Used to add a description or comments with defined template property
 
 
 
-####<a name="tagInput"></a>2.6.7. field list
+#### <a name="tagInput"></a>2.6.7. field list
 
 ![](img/fieldlist.png)
 
@@ -531,7 +540,7 @@ Used to add a description or comments with defined template property
 	}
 
 
-####2.6.8. field list with dropdown of attributes
+#### 2.6.8. field list with dropdown of attributes
 
 ![](img/fieldlistdropdown.png)
 
@@ -547,19 +556,19 @@ Used to add a description or comments with defined template property
 	} 
 <br> 
 
-###2.7 Connection and authentication parameters
+### <a name="creaRE"></a>2.7 Reverse-Engineering
 
 All configurations for Reverse Engineering are stored in folder **reverse_engineering**. 
 
-Reverse Engineering structure is represented by several blocks and include:
+The reverse-engineering structure is represented by several blocks and include:
 
--   configuration for connection settings modal and authentication
--   API program to access the DB and perform reverse-engineering
--   configuration
--   package file with npm modules dependencies
+-   [configuration](#connectConfig) for connection settings modal and authentication
+-   [API program](#APIprogram) to access the DB and perform reverse-engineering
+-   [error messages](#errMessages)
+-   package file with npm modules [dependencies](#dependencies)
 
 
-####2.7.1 Connection parameters and authentication
+#### <a name="connectConfig"></a>2.7.1 Connection parameters and authentication
 Connection and authentication params and connection settings modal configuration are defining in the **connectionSettingsModalConfig.json** file.
 
 	[
@@ -603,7 +612,7 @@ This config contain a list of templates (tabs) for different part of connection 
 
 **defaultValue** *(string)* - optional; default value for connection settings param
 
-####2.7.2 Programming of Reverse-Engineering 
+#### <a name="APIprogram"></a>2.7.2 Programming of Reverse-Engineering 
 The file **api.js** is an adapter between the Hackolade application and the target database that allows you to perform reverse-engineering and process data using the API methods:
 
 -   connect()
@@ -615,7 +624,7 @@ The file **api.js** is an adapter between the Hackolade application and the targ
 -   getDbCollectionsData()
 
 
-####2.7.3 Configuration
+#### <a name="errMessages"></a>2.7.3 Configuration
 The file **config.js** consists of error message list and property 
 
 **errors** *(object)* - list of error messages
@@ -630,12 +639,17 @@ The file **config.js** consists of error message list and property
     	"excludeDocKind": ["id"]
 	}
 
-####2.7.4 Dependencies
+#### <a name="dependencies"></a>2.7.4 Dependencies
 The file **package.json** contains a list of dependencies that are required to execute RE via **api.js**
+<br>
 <br>
 
 
-##<a name="publication"></a>3. Plugin publication
+### <a name="creaFE"></a>2.8 Forward-Engineering (TBA)
+
+<br>
+
+## <a name="publication"></a>3. Plugin publication
 In order for your plugin to appear as downloadable within the Hackolade DB Target Plugin Manager, you need to submit a Pull Request for a modification commit on https://github.com/hackolade/plugins/blob/master/pluginRegistry.json
 
 Add a record with the following structure:
@@ -652,6 +666,6 @@ Add a record with the following structure:
 Send an email to info@hackolade.com and we'll review your submission, and release the plugin if all goes well.
 
 
-##4.License
+## 4.License
 
 [Apache 2.0 license](https://github.com/hackolade/plugins/blob/master/LICENSE "Apache 2.0 license")
