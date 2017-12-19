@@ -1,6 +1,14 @@
 {
 	"plugins": [
 		{
+			"name": "Cassandra",
+			"target": "CASSANDRA",
+			"author": "hackolade",
+			"authorRepo": "https://github.com/hackolade",
+			"description": "Hackolade plugin for Cassandra DataStax",
+			"repository": "https://github.com/hackolade/Cassandra"
+		},
+		{
 			"name": "CosmosDB-with-DocDB-API",
 			"target": "COSMOSDB-DOC",
 			"author": "hackolade",
