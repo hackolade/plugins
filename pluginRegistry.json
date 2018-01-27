@@ -33,6 +33,22 @@
 			"repository": "https://github.com/hackolade/Elasticsearch"
 		},
 		{
+			"name": "Firebase",
+			"target": "FIREBASE",
+			"author": "hackolade",
+			"authorRepo": "https://github.com/hackolade",
+			"description": "Hackolade plugin for RealTime Firebase",
+			"repository": "https://github.com/hackolade/Firebase"
+		},
+		{
+			"name": "Firestore",
+			"target": "FIRESTORE",
+			"author": "hackolade",
+			"authorRepo": "https://github.com/hackolade",
+			"description": "Hackolade plugin for Cloud Firestore",
+			"repository": "https://github.com/hackolade/Firestore"
+		},
+		{
 			"name": "HBase",
 			"target": "HBase",
 			"author": "hackolade",
