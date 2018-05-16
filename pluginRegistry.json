@@ -81,6 +81,14 @@
 			"repository": "https://github.com/hackolade/JSONCustomProperties"
 		},
 		{
+			"name": "MarkLogic",
+			"target": "MARKLOGIC",
+			"author": "hackolade",
+			"authorRepo": "https://github.com/hackolade",
+			"description": "Hackolade plugin for MarkLogic",
+			"repository": "https://github.com/hackolade/MarkLogic"
+		},
+		{
 			"name": "MongoDBCustomProperties",
 			"target": "MONGODB",
 			"author": "hackolade",
