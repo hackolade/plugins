@@ -9,12 +9,12 @@
 			"repository": "https://github.com/hackolade/Cassandra"
 		},
 		{
-			"name": "CosmosDB-with-DocDB-API",
-			"target": "COSMOSDB-DOC",
+			"name": "CosmosDB-with-SQL-API",
+			"target": "COSMOSDB-SQL",
 			"author": "hackolade",
 			"authorRepo": "https://github.com/hackolade",
-			"description": "Hackolade plugin for Azure Cosmos DB with DocumentDB API",
-			"repository": "https://github.com/hackolade/CosmosDB-with-DocDB-API"
+			"description": "Hackolade plugin for Azure Cosmos DB with SQL API",
+			"repository": "https://github.com/hackolade/CosmosDB-with-SQL-API"
 		},
 		{
 			"name": "CosmosDB-with-Mongo-API",
