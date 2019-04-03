@@ -127,6 +127,14 @@
 			"authorRepo": "https://github.com/hackolade",
 			"description": "Hackolade plugin for Neo4j",
 			"repository": "https://github.com/hackolade/neo4j"
+		},
+		{
+			"name": "Joi",
+			"target": "JOI",
+			"author": "Robert Al Malak",
+			"authorRepo": "https://github.com/Qwin",
+			"description": "Hackolade plugin for Joi",
+			"repository": "https://github.com/Qwin/Joi"
 		}
 	]
 }
