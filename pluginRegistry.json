@@ -91,7 +91,7 @@
 		{
 			"name": "Joi",
 			"target": "JOI",
-			"author": "Robert Al Malak",
+			"author": "Qwin",
 			"authorRepo": "https://github.com/Qwin",
 			"description": "Hackolade plugin for Joi",
 			"repository": "https://github.com/Qwin/Joi"
