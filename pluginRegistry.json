@@ -135,6 +135,14 @@
 			"authorRepo": "https://github.com/hackolade",
 			"description": "Hackolade plugin for Neo4j",
 			"repository": "https://github.com/hackolade/neo4j"
+		},
+		{
+			"name": "Swagger",
+			"target": "Swagger",
+			"author": "hackolade",
+			"authorRepo": "https://github.com/hackolade",
+			"description": "Hackolade plugin for Swagger API",
+			"repository": "https://github.com/hackolade/Swagger"
 		}
 	]
 }
