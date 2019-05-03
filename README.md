@@ -390,8 +390,9 @@ Different input controls can be defined for each property:
 4. numeric
 5. checkbox (boolean)
 6. properties group
-7. field list
-8. field list with dropdown of attributes
+7. properties block
+8. field list
+9. field list with dropdown of attributes
 
 Each control is further described below.  The control is defined using the following syntax:  
 **propertyName** *(string)* - required; used to display label in the Properties
@@ -408,7 +409,8 @@ whitespaces are allowed.
 4. numeric: [numeric](#numeric)
 5. checkbox (boolean): [checkbox](#checkbox)
 6. properties group: [group](#group)
-7. field list: [tagInput](#tagInput)
+7. properties block: [block](#block)
+8. field list: [tagInput](#tagInput)
 
 **template** *(string)* - optional; template used in the modal window if propertyType is details; possible value is: 
 details: textarea, or
@@ -425,6 +427,66 @@ validation rules.
 **shouldValidate** *(string)* - optional; defines whether field should be validated or any value is allowed.  Validation rules are defined in validationRegularExpressions.json;
 
 **propertyDefault** *(string|number|boolean)* - optional; contains default value of property. Type of value dependent on *propertyType*.
+
+**dependency** *(object)* - optional; contains an object with a key and arguments determining whether or not to display this property.  
+Example of a simple dependency, testing the value of a previous property:
+
+					"dependency": {
+						"key": "type",
+						"value": "string"
+					}
+
+Example of a dependency, testing for the properties of the string characteristics of another property:
+
+				    "dependency": {
+				        "key": "name",
+				        "minLength": 5,
+				        "maxLength": 10
+				    }
+
+Example of a dependency, testing for the properties of the regex pattern value of another property:
+
+				    "dependency": {
+				        "key": "name",
+				        "pattern": "^(H|h)ackolade (2.5.8|3.0.2)$"
+				    }
+
+Example of a dependency, testing for the properties of the numeric value of another property:
+
+				 "dependency": {
+				        "key": "amount",
+				        "minimum": 10,
+				        "exclusiveMinimum": true,
+				        "maximum": 100
+				    }
+
+Example of a dependency combining *and* and *or* operators:
+
+				"dependency": {
+					"type": "and",
+					"values": [
+						{
+							"type": "or",
+							"values": [
+								{
+									"level": "parent",
+									"key": "name",
+									"value": "query"
+								},
+								{ 
+									"level": "parent",
+									"key": "name",
+									"value": "formData"
+								}
+							]
+						},
+						{
+							"level": "parent",
+							"key": "structureType",
+							"value": true
+						}
+					]
+				}
 
 For your properties, you may choose among a number of input controls:
 
@@ -528,8 +590,12 @@ Used to add a description or comments with defined template property
 	}
 
 
+#### <a name="block"></a>2.6.7. properties block
 
-#### <a name="tagInput"></a>2.6.7. field list
+A *block* control is similar to a *group* control except for the fact that there can only be 0 or 1 block entry, whereas groups allows between 0 and multiple entries.
+  
+
+#### <a name="tagInput"></a>2.6.8. field list
 
 ![](img/fieldlist.png)
 
@@ -541,7 +607,7 @@ Used to add a description or comments with defined template property
 	}
 
 
-#### 2.6.8. field list with dropdown of attributes
+#### 2.6.9. field list with dropdown of attributes
 
 ![](img/fieldlistdropdown.png)
 
