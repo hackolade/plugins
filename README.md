@@ -488,6 +488,19 @@ Example of a dependency combining *and* and *or* operators:
 					]
 				}
 
+**enableForReference** (boolean) - optional: by default, properties of references to a definition (local, model or external) are typically disabled.  By setting this to *true*, the property is enabled for editing, e.g. required.
+
+**disabledOption** (boolean) - optional: only applicable to "propertyKeyword": "dropdownProp" if the dropdown list must appear in grey and disabled.
+
+**disableOnCondition** (boolean) - optional: disables the property if any of conditions is true for the current entity. Must be an array of condition objects. The condition object can have the following structure:
+
+	{
+	    "key" - property name of the current entity,
+	     "exist": true, - if the property with "key" exists on current entity this property is disabled,
+	     or "value" - if "key" is equal to "value" this property is disabled 
+	}
+
+
 For your properties, you may choose among a number of input controls:
 
 #### <a name="text"></a>2.6.1. simple text
