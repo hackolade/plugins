@@ -413,9 +413,11 @@ whitespaces are allowed.
 8. field list: [tagInput](#tagInput)
 
 **template** *(string)* - optional; template used in the modal window if propertyType is details; possible value is: 
-details: textarea, or
+details: textarea, or textareaJSON (input is validated to be JSON)
 tagInput: collectiontree
 
+**markdown**: *(boolean)* - optional (default = true): if "propertyType": "details" and "template": "textarea", markdown can be turned off (for example for functions)
+ 
 **options** *(array)* - optional; used to define options in the select input if
 propertyType is select.
 
@@ -424,7 +426,9 @@ propertyType is select.
 **valueType** *(string)* - optional; type (one out of 7 basic types) to define
 validation rules.
 
-**shouldValidate** *(string)* - optional; defines whether field should be validated or any value is allowed.  Validation rules are defined in validationRegularExpressions.json;
+**shouldValidate** *(boolean)* - optional (default = false): defines whether field should be validated or any value is allowed.  Validation rules are defined once in validationRegularExpressions.json, and are the same in any matching propertyName in any level.  
+
+**regex** *(string)* - optional: defines the regex validation for this specific property (the same propertyName could have a different validation rule elsewhere.)
 
 **propertyDefault** *(string|number|boolean)* - optional; contains default value of property. Type of value dependent on *propertyType*.
 
@@ -490,9 +494,9 @@ Example of a dependency combining *and* and *or* operators:
 
 **enableForReference** (boolean) - optional: by default, properties of references to a definition (local, model or external) are typically disabled.  By setting this to *true*, the property is enabled for editing, e.g. required.
 
-**disabledOption** (boolean) - optional: only applicable to "propertyKeyword": "dropdownProp" if the dropdown list must appear in grey and disabled.
+**disabledOption** (boolean) - optional (default = false): only applicable to "propertyKeyword": "dropdownProp" if the dropdown list must appear in grey and disabled.
 
-**disableOnCondition** (boolean) - optional: disables the property if any of conditions is true for the current entity. Must be an array of condition objects. The condition object can have the following structure:
+**disableOnCondition** (object) - optional: disables the property if any of conditions is true for the current entity. Must be an array of condition objects. The condition object can have the following structure:
 
 	{
 	    "key" - property name of the current entity,
@@ -638,7 +642,7 @@ A *block* control is similar to a *group* control except for the fact that there
 
 ### <a name="creaRE"></a>2.7 Reverse-Engineering
 
-All configurations for Reverse Engineering are stored in folder **reverse_engineering**. 
+All configurations for Reverse-Engineering are stored in folder **reverse_engineering**. 
 
 The reverse-engineering structure is represented by several blocks and include:
 
@@ -725,12 +729,40 @@ The file **package.json** contains a list of dependencies that are required to e
 <br>
 
 
-### <a name="creaFE"></a>2.8 Forward-Engineering (TBA)
+### <a name="creaFE"></a>2.8 Forward-Engineering
+
+All configurations for Forward-Engineering are stored in folder **forward_engineering**. 
+
+The forward-engineering structure is represented by several blocks and include:
+
+-   [configuration](#FEconnectConfig) for connection settings modal and authentication
+-   [API program](#FEAPIprogram) to access the DB and perform reverse-engineering
+-   [error messages](#FEerrMessages)
+-   package file with npm modules [dependencies](#FEdependencies)
+-   filtering of unneeded propreties [Unneeded](#FEunneeded)
+
+
+#### <a name="FEconnectConfig"></a>2.8.1 Connection parameters and authentication
+If forward-engineering can connect to the database instance (e.g. Cassandra), the connection and authentication params and connection settings modal configuration from reverse-engineering defined in the **connectionSettingsModalConfig.json** file are used.
+
+#### <a name="FEAPIprogram"></a>2.8.2 Programming of Forward-Engineering (TBA) 
+The file **api.js** is an adapter between the Hackolade application and the target database that allows you to perform forward-engineering and process data using API methods.
+
+#### <a name="FEerrMessages"></a>2.8.3 Configuration
+The file **config.js** consists of error message list and property 
+
+#### <a name="FEdependencies"></a>2.8.4 Dependencies
+The file **package.json** contains a list of dependencies that are required to execute RE via **api.js**
+
+#### <a name="FEunneeded"></a>2.8.4 Unneeded properties
+In the configuration file jsonSchemaProperties.json, it is possible to set:
+- **uneededFieldProps** *(array)* - listed properties will be removed from forwarded JSON Schema on JSON Preview tab and JSON Schema forward-engineered files.
+- **removeIfPropsNegative** *(array)* - listed properties will be removed from JSON Schema if the property value, converted to boolean, is equal to false (false, null, undefined) 
 
 <br>
 
 ## <a name="publication"></a>3. Plugin publication
-In order for your plugin to appear as downloadable within the Hackolade DB Target Plugin Manager, you need to submit a Pull Request for a modification commit on https://github.com/hackolade/plugins/blob/master/pluginRegistry.json
+In order for your plugin to appear as downloadable within the Hackolade Target Plugin Manager, you need to submit a Pull Request for a modification commit on https://github.com/hackolade/plugins/blob/master/pluginRegistry.json
 
 Add a record with the following structure:
 
