@@ -137,6 +137,14 @@
 			"repository": "https://github.com/hackolade/neo4j"
 		},
 		{
+			"name": "OpenAPI",
+			"target": "OPENAPI",
+			"author": "hackolade",
+			"authorRepo": "https://github.com/hackolade",
+			"description": "Hackolade plugin for OpenAPI",
+			"repository": "https://github.com/hackolade/OpenAPI"
+		},
+		{
 			"name": "Swagger",
 			"target": "Swagger",
 			"author": "hackolade",
