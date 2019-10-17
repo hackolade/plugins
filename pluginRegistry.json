@@ -151,6 +151,14 @@
 			"authorRepo": "https://github.com/hackolade",
 			"description": "Hackolade plugin for Swagger API",
 			"repository": "https://github.com/hackolade/Swagger"
+		},
+		{
+			"name": "TinkerPop",
+			"target": "TinkerPop",
+			"author": "hackolade",
+			"authorRepo": "https://github.com/hackolade",
+			"description": "Hackolade plugin for TinkerPop",
+			"repository": "https://github.com/hackolade/tinkerpop"
 		}
 	]
 }
