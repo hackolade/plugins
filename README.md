@@ -439,6 +439,12 @@ Example of a simple dependency, testing the value of a previous property:
 						"key": "type",
 						"value": "string"
 					}
+Example of a dependency, testing for the presence of a previous property:
+
+					"dependency": {
+						"key": "name",
+						"exists": false
+					}
 
 Example of a dependency, testing for the properties of the string characteristics of another property:
 
