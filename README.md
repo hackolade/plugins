@@ -735,6 +735,7 @@ Test current connection
 **getDatabases**(*connectionInfo, logger, callback*)
 
 Get the list of databases
+
 | Name           | Type              | Description                                                                                                                                     |
 |----------------|-------------------|-------------------------------------------------------------------------------------------------------------------------------------------------|
 | connectionInfo | object            | Hackolade connection info<br>see **ConnectionInfo**                                                                                             |
@@ -744,6 +745,7 @@ Get the list of databases
 **getDocumentKinds**(*connectionInfo, logger, callback*)
 
 Get document kinds of current database
+
 | Name           | Type              | Description                                                                                                                                                                |
 |----------------|-------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | connectionInfo | object            | Hackolade connection info<br>see **ConnectionInfo**                                                                                                                        |
@@ -753,6 +755,7 @@ Get document kinds of current database
 **getDbCollectionsNames**(*connectionInfo, logger, callback*)
 
 Get the list of databases and the list of entities within these databases
+
 | Name           | Type              | Description                                                                                                                |
 |----------------|-------------------|----------------------------------------------------------------------------------------------------------------------------|
 | connectionInfo | object            | Hackolade connection info<br>see **ConnectionInfo**                                                                        |
@@ -762,6 +765,7 @@ Get the list of databases and the list of entities within these databases
 **getDbCollectionsData**(*connectionInfo, logger, callback*)
 
 Get the data from the connection based on chosen databases, document kinds or entities
+
 | Name           | Type              | Description                                                                                                                |
 |----------------|-------------------|----------------------------------------------------------------------------------------------------------------------------|
 | connectionInfo | object            | Hackolade connection info<br>see **ConnectionInfo**                                                                        |
@@ -770,7 +774,8 @@ Get the data from the connection based on chosen databases, document kinds or en
 
 **disconnect**(*connectionInfo, logger, callback*)
 
-Disconnects the current session from Hackolade.
+Disconnects the current session from Hackolade
+
 | Name           | Type              | Description                                         |
 |----------------|-------------------|-----------------------------------------------------|
 | connectionInfo | object            | Hackolade connection info<br>see **ConnectionInfo** |
