@@ -1,22 +1,24 @@
 # Hackolade NoSQL DB data modeling plugins
 
-This is the repository for Hackolade plugins.  Plugins let anyone create support so new NoSQL databases can leverage the Hackolade data modeling engine, if they're not already natively supported in Hackolade.  Several plugins have been created by Hackolade for leading NoSQL databases, but you may build your own and have it listed in the DB Target Plugin Manager of the application.
+This page is the documentation for the repository of Hackolade plugins.  Plugins let anyone create support so new NoSQL databases can leverage the Hackolade data modeling engine, if they're not already natively supported in Hackolade.  Several plugins have been created by Hackolade for leading NoSQL databases, but you may build your own and have it listed in the DB Target Plugin Manager of the application.
 
-The plugin architecture of Hackolade lets you create your own NoSQL database
-‘targets’, respecting its characteristics, through a combination of configuration and custom JavaScript code.  Custom JS code is only necessary for Reverse- and Forward-Engineering.
+The plugin architecture of Hackolade lets you create your own NoSQL database ‘targets’, respecting its characteristics, through a combination of configuration and custom JavaScript code.  Custom JS code is only necessary for Reverse- and Forward-Engineering.
+
+**Note** that targets are not limited to NoSQL databases!  The Hackolade data modeling engine is applicable also to file formats, serialization IDLs, API definitions, relational databases, etc.
 
 The process includes 3 main steps:
 
 1. [preparation](#preparation)
 2. [plugin creation](#creation)
 3. [publication](#publication)
+4. See also our [license](#license)
 
 This guide walks you through the steps to create your own plugin in your own GitHub repository. Once you’re ready to make your plugin public, you may create a pull request for your entry in the registry file in this repository.  
 
 
 ## <a name="preparation"></a>1. Overview and preparation
 
-Each NoSQL document database has its own personality: terminology, storage
+Each NoSQL database has its own personality: terminology, storage
 approach, primary keys, data types, indexing, partitioning/sharding, API, query language, etc...
 At Hackolade, after adapting our engine to a couple of rather different NoSQL
 vendors, we quickly realized that we were going to have a hard time keeping up
@@ -35,7 +37,7 @@ The customization is performed through the configuration of the following module
 3.  [properties panes](#prepPanes)
 4.  [connection and authentication](#prepConnection) parameters
 5.  [reverse-engineering](#prepRE) parameters for document sampling and schema inference
-6.  [forward-engineering](#prepFE) if the target DB supports it (TBA) 
+6.  [forward-engineering](#prepFE) if the target DB supports it 
 
  
 ### <a name="prepLocalization"></a>1.1 Hierarchy and localization
@@ -47,7 +49,7 @@ You first need to carefully define the hierarchy for the database, and its relat
 ### <a name="prepTypes"></a>1.2 Data types
 Next, you need to define data types.  Many databases simply support the standard JSON data types.  Others have additional data types with special behaviors.  
 
-<img src="img/a970787a1959e2daec00f462128b54c8.png" alt="data types" width="30%" height="30%">
+<img src="img/a970787a1959e2daec00f462128b54c8.png" alt="data types" width="20%" height="30%">
 
 You may specify the order in which the data types appear.
 <br>
@@ -62,7 +64,7 @@ The same controls can be used to define information in different properties pane
 <br>
 
 
-### <a name="prepConnection">1.4 Connection and authentication parameters
+### <a name="prepConnection"></a>1.4 Connection and authentication parameters
 In order for reverse-engineering to be performed, it is first necessary to connect to the database.  You need to define the protocol, connection parameters, and authentication parameters.
 ![Connection settings dialog](img/connection_settings_modal.png)
 <br>
@@ -74,9 +76,9 @@ This code will connect to the database according to the connection parameters de
 <br>
 
 
-### <a name="prepFE"></a>1.6 Forward-engineering (TBA)
-
-<br>
+### <a name="prepFE"></a>1.6 Forward-engineering
+For Forward-Engineer to be performed, it is required to write custom JavaScript code.  
+This code will generate target-specific scripts, according to the syntax of the target.
 <br>
 
 ## <a name="creation"></a>2. Plugin creation
@@ -165,13 +167,9 @@ Available features:
 
 **disabled** - optional; used to mark the plugin as disabled [default: false]
 
- 
-
 
 ### <a name="creaLogo"></a>2.2 Logo file
 **logo.jpg** - the plugin logo image to be displayed in the list of plugins. Name and extension of the file cannot be changed. The file is placed in the root folder next to the package.json file. If not set - the first letter from **name** property in package.json file will be used instead of a logo.
-
- 
 
 
 ### <a name="creaLocalization"></a>2.3 Localization
@@ -213,8 +211,6 @@ For example in order to create custom type \<list\> using the \<array\> type as 
 a.  Create list.json file inside **types** sub-folder of the plugin folder (notice that file name should be the same as type name)
 
 b.  Edit list.json to set the name, parent type (one out of list of 7 base types) and abbreviations for your custom type in the properties object inside list.json file:
-
- 
 
 	{
     	"name": "list",
@@ -435,68 +431,68 @@ validation rules.
 **dependency** *(object)* - optional; contains an object with a key and arguments determining whether or not to display this property.  
 Example of a simple dependency, testing the value of a previous property:
 
-					"dependency": {
-						"key": "type",
-						"value": "string"
-					}
+		"dependency": {
+			"key": "type",
+			"value": "string"
+		}
 Example of a dependency, testing for the presence of a previous property:
 
-					"dependency": {
-						"key": "name",
-						"exists": false
-					}
+		"dependency": {
+			"key": "name",
+			"exists": false
+		}
 
 Example of a dependency, testing for the properties of the string characteristics of another property:
 
-				    "dependency": {
-				        "key": "name",
-				        "minLength": 5,
-				        "maxLength": 10
-				    }
+	    "dependency": {
+	        "key": "name",
+	        "minLength": 5,
+	        "maxLength": 10
+	    }
 
 Example of a dependency, testing for the properties of the regex pattern value of another property:
 
-				    "dependency": {
-				        "key": "name",
-				        "pattern": "^(H|h)ackolade (2.5.8|3.0.2)$"
-				    }
+	    "dependency": {
+			"key": "name",
+			"pattern": "^(H|h)ackolade (2.5.8|3.0.2)$"
+	    }
 
 Example of a dependency, testing for the properties of the numeric value of another property:
 
-				 "dependency": {
-				        "key": "amount",
-				        "minimum": 10,
-				        "exclusiveMinimum": true,
-				        "maximum": 100
-				    }
+		"dependency": {
+		    "key": "amount",
+		    "minimum": 10,
+		    "exclusiveMinimum": true,
+		    "maximum": 100
+		}
 
 Example of a dependency combining *and* and *or* operators:
 
-				"dependency": {
-					"type": "and",
+		"dependency": {
+			"type": "and",
+			"values": [
+				{
+					"type": "or",
 					"values": [
 						{
-							"type": "or",
-							"values": [
-								{
-									"level": "parent",
-									"key": "name",
-									"value": "query"
-								},
-								{ 
-									"level": "parent",
-									"key": "name",
-									"value": "formData"
-								}
-							]
-						},
-						{
 							"level": "parent",
-							"key": "structureType",
-							"value": true
+							"key": "name",
+							"value": "query"
+						},
+						{ 
+							"level": "parent",
+							"key": "name",
+							"value": "formData"
 						}
 					]
+				},
+				{
+					"level": "parent",
+					"key": "structureType",
+					"value": true
 				}
+			]
+		}
 
 **enableForReference** (boolean) - optional: by default, properties of references to a definition (local, model or external) are typically disabled.  By setting this to *true*, the property is enabled for editing, e.g. required.
 
@@ -522,6 +518,7 @@ For your properties, you may choose among a number of input controls:
 		"propertyName": "Simple text",
 		"propertyKeyword": "simpletextProp",
 		"propertyType": "text",
+		"valueType": "string"
 	}
 
 
@@ -535,7 +532,8 @@ Used to add a description or comments with defined template property
 		"propertyKeyword": "textareaProp",
 		"propertyTooltip": "Popup for multi-line text entry",
 		"propertyType": "details",
-		"template": "textarea"
+		"template": "textarea",
+		"markdown": false
 	}
 
 
@@ -570,6 +568,9 @@ Used to add a description or comments with defined template property
 		"propertyType": "numeric",
 		"valueType": "number",
 		"allowNegative": false,
+		"minValue": 0,
+		"maxValue": 1,
+		"step": 0.01,
 		"propertyValidate": true
 	},
 
@@ -703,30 +704,303 @@ This config contain a list of templates (tabs) for different part of connection 
 **defaultValue** *(string)* - optional; default value for connection settings param
 
 #### <a name="APIprogram"></a>2.7.2 Programming of Reverse-Engineering 
-The file **api.js** is an adapter between the Hackolade application and the target database that allows you to perform reverse-engineering and process data using the API methods:
+The file **api.js** contains hooks which are called by the Hackolade application. Hackolade passes its context data into the hooks and accepts results of reverse-engineering in callbacks. 
 
--   connect()
--   disconnect()
--   testConnection()
--   getDatabases()
--   getDocumentKinds()
--   getDbCollectionsNames()
--   getDbCollectionsData()
+Depending on the selected RE scenario (see Scenario in [configuration](# errMessages), below) different hooks are called. The list of the hooks:
+
+*Common*:
+
+- testConnection()
+- getDbCollectionsData()
+- disconnect()
+
+*Scenario-specific*:
+
+- getDatabases()
+- getDocumentKinds()
+- getDbCollectionsNames()
+
+**API hooks**
+
+**testConnection**(*connectionInfo, logger, callback*)
+
+Test current connection
+ 
+| Name           | Type              | Description                                                                                                                                                        |
+|----------------|-------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| connectionInfo | object            | Hackolade connection info<br>see **ConnectionInfo**                                                                                                                |
+| logger         | object            | Hackolade connection logger<br>see **Logger**                                                                                                                      |
+| callback       | callback function | **callback**(*undefined \| error*)<br>- **undefined**: *connection succeeds (empty callback)<br>- **error**: *connection fails with an error (error object)*       |
+
+**getDatabases**(*connectionInfo, logger, callback*)
+
+Get the list of databases
+| Name           | Type              | Description                                                                                                                                     |
+|----------------|-------------------|-------------------------------------------------------------------------------------------------------------------------------------------------|
+| connectionInfo | object            | Hackolade connection info<br>see **ConnectionInfo**                                                                                             |
+| logger         | object            | Hackolade connection logger<br>see **Logger**                                                                                                   |
+| callback       | callback function | **callback**(*error, databases*) <br>- **error** *(Error object)*<br>- **databases** *(array[string]]): a list of the accessible databases*     |
+
+**getDocumentKinds**(*connectionInfo, logger, callback*)
+
+Get document kinds of current database
+| Name           | Type              | Description                                                                                                                                                                |
+|----------------|-------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| connectionInfo | object            | Hackolade connection info<br>see **ConnectionInfo**                                                                                                                        |
+| logger         | object            | Hackolade connection logger<br>see **Logger**                                                                                                                              |
+| callback       | callback function | **callback**(*error, documentKinds*) <br>- **error** (Error object)<br>- **documentKinds** (array[string]]): *a list of the accessible documentKinds in chosen database*   |
+
+**getDbCollectionsNames**(*connectionInfo, logger, callback*)
+
+Get the list of databases and the list of entities within these databases
+| Name           | Type              | Description                                                                                                                |
+|----------------|-------------------|----------------------------------------------------------------------------------------------------------------------------|
+| connectionInfo | object            | Hackolade connection info<br>see **ConnectionInfo**                                                                        |
+| logger         | object            | Hackolade connection logger<br>see **Logger**                                                                              |
+| callback       | callback function | **callback**(*error, collectionNames*) <br>- **error** *(Error object)*<br>- **collectionNames** see **collectionNames**.  |
+
+**getDbCollectionsData**(*connectionInfo, logger, callback*)
+
+Get the data from the connection based on chosen databases, document kinds or entities
+| Name           | Type              | Description                                                                                                                |
+|----------------|-------------------|----------------------------------------------------------------------------------------------------------------------------|
+| connectionInfo | object            | Hackolade connection info<br>see **ConnectionInfo**                                                                        |
+| logger         | object            | Hackolade connection logger<br>see **Logger**                                                                              |
+| callback       | callback function | **callback**(*error, collectionsData*) <br>- **error** *(Error object)*<br>- **collectionsData** see **collectionsData**   |
+
+**disconnect**(*connectionInfo, logger, callback*)
+
+Disconnects the current session from Hackolade.
+| Name           | Type              | Description                                         |
+|----------------|-------------------|-----------------------------------------------------|
+| connectionInfo | object            | Hackolade connection info<br>see **ConnectionInfo** |
+| logger         | object            | Hackolade connection logger<br>see **Logger**       |
+| callback       | callback function |                                                     |
+
+
+**API references:**
+
+**ConnectionInfo**
+
+Connection parameters and authentication
+
+*type: object*
+
+System parameters:
+
+* **id** (string): *id of current connection*
+* **pluginPath** (string): *path to the plugin*
+* **appVersion** (string): *application version*
+* **fieldInference** (object): setting of field inference to define whether keep the field order or no:
+   - **active** (string): “field” | “alphabetical” 
+* **recordSamplingSettings** (object):* sampling settings to define the number for perform documents sampling:*
+   - **absolute** (object):
+      - value (number): the absolute number of documents
+   - **relative** (object):
+      - value (number): the relative number of documents (in percentage)
+   - **active** (string): what type of sampling is active (“absolute” | “relative”)
+   - **maxValue** (number): the maximum value for sampling
+
+Custom parameters (see property “inputKeyword” in “2.7.1 Connection parameters and authentication”) 
+
+* **host** (string)
+* **port** (string)
+
+…..
+
+**Logger**
+
+Methods:
+**log**(*status, content, title, hiddenKeys*)
+
+| Name       | Type               | Description                                                          |
+|------------|--------------------|----------------------------------------------------------------------|
+| status     | string             | Status of the log message<br>*Enums: [‘success’, ‘info’, ‘error’]*   |
+| content    | string<br>\| object| Error object or string with the log message                         |
+| title      | string             | Title of the error or log message                                    |
+| hiddenKeys | array[string]      | a list of the keys that should be hidden in the log (e.g.: password) |
+
+**clear**() - method to clear the log file
+
+**collectionNames**
+
+List of the databases and their entities (see entity selection bellow)
+
+type:  array[object]
+
+Parameters:
+* **dbCollections** (array[string]): *the list of entities names in the database*
+* **dbName** (string): *the name of the database*
+
+*Example:*
+
+		{
+			dbCollections: [“messages”, “users”],
+			dbName: “chat”
+		}
+
+*Entity selection*
+
+![](img/entity_selection_modal.png)
+
+**collectionsData**
+
+List of the entities data
+
+*type: array[object]*
+
+Parameters:
+
+* **dbName** (string): *name of the database*
+* **collectionName** (string): *name of entity*
+* **documents** (array): *list of the documents from entity*
+* **indexes** (array): *list of the entity indexes*
+* **bucketIndexes** (array): **list of the container-level indexes*
+* **views** (array): **list of views (if the database supports views)**
+* **validation** (object): *object with JSON Schema based on document from entity in order to define some specific type (e.g. if we have value: 56 we can define this type as number or integer)*
+* **validation**: 
+	- **jsonSchema** (JSON Schema object) JSON schema from database model to be used instead of documents (in case we can get the schema from DB instance)
+* **emptyBucket** (boolean): upload empty container or not  
+* **bucketInfo** (object): object with container info
+* **entityLevel** (object): entity level data with:
+	-	constraint (array): the list of constraints
+* **documentTemplate** (object): *JSON object with template of document to have the right order of document attributes*
+
+Example:
+
+	[
+    	{
+        	"dbName": "graph.db",
+        	"collectionName": "Movies",
+        	"documents": [
+            		{
+                		"title": "The Matrix",
+                		"tagline": "Welcome to the Real World",
+                		"released": 1999
+            		},
+            		{
+                		"title": "The Matrix Reloaded",
+                		"tagline": "Free your mind",
+                		"released": 2003
+            		}
+        	],
+        	"indexes": [],
+        	"bucketIndexes": [],
+        	"views": [],
+        	"validation": {
+            		"jsonSchema": {
+                		"required": [],
+                		"properties": {
+                    		"released": {
+                        			"type": "number",
+                        			"mode": "integer",
+                        			"sample": 1999
+                    		}
+                		}
+            		}
+        	},
+        	"emptyBucket": false,
+        	"bucketInfo": {},
+        	"entityLevel": {
+            		"constraint": []
+        		},
+        	"documentTemplate": {
+            		"title": "A League of Their Own",
+            		"tagline": "Once in a lifetime you get a chance to do something different.",
+            		"released": 1992
+        		}
+    		}
+	]
+
+**selectionParams**
+
+Selection params and connection info
+
+*type: object*
+
+Parameters:
+
+* **collectionData** (object):
+   - **collections** (object): **object with selected entities. Consists of keys with array of entities - <database name>: [<entity name>]*
+   - **dataBaseNames** (array): *list of selected containers*
+* **connectionSettings** (object): see **Connection parameters**
+* **fieldInference** (object): setting of field inference to define whether keep the field order or no:
+   - **active** (string): “field” | “alphabetical” 
+* **recordSamplingSettings** (object): *sampling settings to define the number for perform documents sampling:*
+   - **absolute** (object):
+      - **value** (number): *absolute number of documents*
+   - **relative** (object):
+      - **value** (number): *percentage of total number of documents*
+   - **active** (string): what type of sampling is active (“absolute” | “relative”)
+   - **maxValue** (number): *maximum total number of documents for sampling*
+* **includeEmptyCollection** (boolean): *reverse-engineer empty entities*
+* **includeSystemCollection** (boolean): *reverse-engineer system entities* 
+* **pagination** (object):  *for Couchbase: when pagination is present*
+   - **enabled** (boolean)
+   - **value** (number) *number of pages for connection*
+
+Example:
+
+	{
+    	"collectionData": {
+        	"collections": {
+           		"chat": [
+               		"messages",
+               		"users"
+           		]
+        },
+        "dataBaseNames": [
+           		"chat"
+        	]
+    	},
+    	"fieldInference": {
+        	"active": "field"
+    	},
+    	"includeEmptyCollection": false,
+    	"pagination": {
+        	"enabled": false,
+        	"value": 1000
+    	},
+    	"pluginPath": "/home/user/.hackolade/plugins/Cassandra",
+    	"recordSamplingSettings": {
+        	"absolute": {
+           		"value": 1000
+        	},
+        	"active": "absolute",
+        	"maxValue": 10000,
+        	"relative": {
+           		"value": 10
+        	}
+    	},
+    	"target": "CASSANDRA",
+    	"hiddenKeys": [
+        	"options"
+    	]
+	}
 
 
 #### <a name="errMessages"></a>2.7.3 Configuration
-The file **config.js** consists of error message list and property 
+The file **config.js** consists of error message list and properties 
 
 **errors** *(object)* - list of error messages
 
 **excludeDocKind** *(array)* - list of properties which would be excluded from select docType modal
 
+**scenario** *(string)* - name of the scenario used for the reverse-engineering process.  Defines in which order the API hooks will be called. Possible values are: “connectToDB” (default), “getDatabases”, “getDocumentKinds”. 
+
+1.	“**connectToDB**” - in case the target database allows to maintain several databases and entities. Hackolade calls the “**getDbCollectionsNames**” hook to retrieve a list of databases and their entities. 
+2.	“**getDatabases**” - in case the target database allows to maintain several databases without splitting data into entities. Hackolade calls the “**getDatabases**” hook to retrieve a list of databases and then “**getDocumentKinds**” to retrieve a list of document kinds inferred from data.
+3.	“**getDocumentKinds**” - in case the target database does not allow to maintain neither databases, nor entities. Hackolade calls the “**getDocumentKinds**” hook to retrieve a list of document kinds inferred from data.
+
+In every scenario Hackolade also calls the “getDbCollectionsData” to actually retrieve the reverse-engineering data.
+
 	{
     	"errors": {
-		"NO_DATABASES": "There are no databases in CosmosDB instance",
-		"WRONG_CONNECTION": "Can not connect to CosmosDB instance"
+			"NO_DATABASES": "No database can be found in CosmosDB instance",
+			"WRONG_CONNECTION": "Cannot connect to CosmosDB instance"
     	},
-    	"excludeDocKind": ["id"]
+    	"excludeDocKind": ["id"],
+		“scenario”: "connectToDB"
 	}
 
 #### <a name="dependencies"></a>2.7.4 Dependencies
@@ -751,17 +1025,70 @@ The forward-engineering structure is represented by several blocks and include:
 #### <a name="FEconnectConfig"></a>2.8.1 Connection parameters and authentication
 If forward-engineering can connect to the database instance (e.g. Cassandra), the connection and authentication params and connection settings modal configuration from reverse-engineering defined in the **connectionSettingsModalConfig.json** file are used.
 
-#### <a name="FEAPIprogram"></a>2.8.2 Programming of Forward-Engineering (TBA) 
+#### <a name="FEAPIprogram"></a>2.8.2 Programming of Forward-Engineering 
 The file **api.js** is an adapter between the Hackolade application and the target database that allows you to perform forward-engineering and process data using API methods.
 
+
+
 #### <a name="FEerrMessages"></a>2.8.3 Configuration
-The file **config.js** consists of error message list and property 
+The file **config.js** consists of error message list and properties
+
+-	**extension** (string): *file extension*
+-	**filterName** (string): *name of the file for download dialog*
+-	**namePrefix** (string): *name prefix for file*
+-	**validation** (boolean): *script/schema is validating by plugin*
+	-	**level** (object): *select levels of forward-engineering to generate*
+	-	**model** (boolean)
+	-	**container** (boolean)
+-	**entity** (boolean)
+-	**splitView** (object): *whether to display split forward-engineering tabs*
+	-	**openedByDefault** (boolean): split view on start
+-	**options** (array): *script/schema format variations*
+-	**additionalOptions**: *additional configuration options for script/schema generation* 
+
+		{
+			"extension": "json",
+			"filterName": "application/json",
+			"namePrefix": "OpenAPI Schema",
+			"hasUpdateScript": false,
+			"validation": true,
+			"splitView": {
+				"openedByDefault": true
+			},
+			"level": {
+				"entity": false,
+				"container": false,
+				"model": true
+			},
+			"options": [
+				{ 
+					"name": "JSON", 
+					"keyword": "json", 
+					"fileExtensions": [
+						{
+							"label": "application/json", "value": "json"
+						} 
+					]	 
+				},
+				{ 
+					"name": "YAML", 
+					"keyword": "yaml", 
+					"fileExtensions": [ 
+						{
+							"label": "application/yaml", "value": "yaml"
+						} 
+					] 
+				}
+			]
+		}
+
 
 #### <a name="FEdependencies"></a>2.8.4 Dependencies
 The file **package.json** contains a list of dependencies that are required to execute RE via **api.js**
 
 #### <a name="FEunneeded"></a>2.8.4 Unneeded properties
 In the configuration file jsonSchemaProperties.json, it is possible to set:
+
 - **uneededFieldProps** *(array)* - listed properties will be removed from forwarded JSON Schema on JSON Preview tab and JSON Schema forward-engineered files.
 - **removeIfPropsNegative** *(array)* - listed properties will be removed from JSON Schema if the property value, converted to boolean, is equal to false (false, null, undefined) 
 
@@ -784,6 +1111,6 @@ Add a record with the following structure:
 Send an email to info@hackolade.com and we'll review your submission, and release the plugin if all goes well.
 
 
-## 4.License
+## <a name="license"></a>4.License
 
 [Apache 2.0 license](https://github.com/hackolade/plugins/blob/master/LICENSE "Apache 2.0 license")
