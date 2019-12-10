@@ -73,6 +73,14 @@
 			"repository": "https://github.com/hackolade/Firestore"
 		},
 		{
+			"name": "glue",
+			"target": "Glue",
+			"author": "hackolade",
+			"authorRepo": "https://github.com/hackolade",
+			"description": "Hackolade plugin for AWS Glue Data Catalog",
+			"repository": "https://github.com/hackolade/glue"
+		},
+		{
 			"name": "HBase",
 			"target": "HBase",
 			"author": "hackolade",
