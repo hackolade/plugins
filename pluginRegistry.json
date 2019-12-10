@@ -73,7 +73,7 @@
 			"repository": "https://github.com/hackolade/Firestore"
 		},
 		{
-			"name": "glue",
+			"name": "Glue",
 			"target": "Glue",
 			"author": "hackolade",
 			"authorRepo": "https://github.com/hackolade",
