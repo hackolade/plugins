@@ -153,6 +153,14 @@
 			"repository": "https://github.com/hackolade/OpenAPI"
 		},
 		{
+			"name": "Parquet",
+			"target": "PARQUET",
+			"author": "hackolade",
+			"authorRepo": "https://github.com/hackolade",
+			"description": "Hackolade plugin for Apache Parquet schema",
+			"repository": "https://github.com/hackolade/Parquet"
+		},
+		{
 			"name": "Swagger",
 			"target": "Swagger",
 			"author": "hackolade",
