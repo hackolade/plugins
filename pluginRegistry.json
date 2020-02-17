@@ -33,6 +33,22 @@
 			"repository": "https://github.com/hackolade/CosmosDB-with-Mongo-API"
 		},
 		{
+			"name": "CouchbaseCustomProperties",
+			"target": "COUCHBASE",
+			"author": "hackolade",
+			"authorRepo": "https://github.com/hackolade",
+			"description": "Plugin to allow definition in Hackolade of custom properties for Couchbase target",
+			"repository": "https://github.com/hackolade/CouchbaseCustomProperties"
+		},
+		{
+			"name": "DynamoDBCustomProperties",
+			"target": "DYNAMODB",
+			"author": "hackolade",
+			"authorRepo": "https://github.com/hackolade",
+			"description": "Plugin to allow definition in Hackolade of custom properties for DynamoDB target",
+			"repository": "https://github.com/hackolade/DynamoDBCustomProperties"
+		},
+		{
 			"name": "Elasticsearch",
 			"target": "ELASTICSEARCH",
 			"author": "hackolade",
@@ -89,12 +105,28 @@
 			"repository": "https://github.com/Qwin/Joi"
 		},
 		{
+			"name": "JSONCustomProperties",
+			"target": "JSON",
+			"author": "hackolade",
+			"authorRepo": "https://github.com/hackolade",
+			"description": "Plugin to allow definition in Hackolade of custom properties for Plain JSON target",
+			"repository": "https://github.com/hackolade/JSONCustomProperties"
+		},
+		{
 			"name": "MarkLogic",
 			"target": "MARKLOGIC",
 			"author": "hackolade",
 			"authorRepo": "https://github.com/hackolade",
 			"description": "Hackolade plugin for MarkLogic",
 			"repository": "https://github.com/hackolade/MarkLogic"
+		},
+		{
+			"name": "MongoDBCustomProperties",
+			"target": "MONGODB",
+			"author": "hackolade",
+			"authorRepo": "https://github.com/hackolade",
+			"description": "Plugin to allow definition in Hackolade of custom properties for MongoDB target",
+			"repository": "https://github.com/hackolade/MongoDBCustomProperties"
 		},
 		{
 			"name": "MonStor",
