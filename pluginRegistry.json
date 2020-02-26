@@ -129,6 +129,14 @@
 			"repository": "https://github.com/hackolade/Parquet"
 		},
 		{
+			"name": "ScyllaDB",
+			"target": "ScyllaDB",
+			"author": "hackolade",
+			"authorRepo": "https://github.com/hackolade",
+			"description": "Hackolade plugin for ScyllaDB",
+			"repository": "https://github.com/hackolade/ScyllaDB"
+		},
+		{
 			"name": "Swagger",
 			"target": "Swagger",
 			"author": "hackolade",
