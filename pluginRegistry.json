@@ -105,6 +105,14 @@
 			"repository": "https://github.com/hackolade/MonStor"
 		},
 		{
+			"name": "SQLServer",
+			"target": "MSSQLServer",
+			"author": "hackolade",
+			"authorRepo": "https://github.com/hackolade",
+			"description": "Hackolade plugin for Microsoft SQL Server and Azure SQL Database",
+			"repository": "https://github.com/hackolade/SQLServer"
+		},
+		{
 			"name": "Neo4j",
 			"target": "NEO4J",
 			"author": "hackolade",
@@ -135,6 +143,14 @@
 			"authorRepo": "https://github.com/hackolade",
 			"description": "Hackolade plugin for ScyllaDB",
 			"repository": "https://github.com/hackolade/ScyllaDB"
+		},
+		{
+			"name": "Snowflake",
+			"target": "Snowflake",
+			"author": "hackolade",
+			"authorRepo": "https://github.com/hackolade",
+			"description": "Hackolade plugin for Snowflake",
+			"repository": "https://github.com/hackolade/Snowflake"
 		},
 		{
 			"name": "Swagger",
