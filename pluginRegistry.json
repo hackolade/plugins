@@ -161,6 +161,14 @@
 			"repository": "https://github.com/hackolade/Swagger"
 		},
 		{
+			"name": "Synapse",
+			"target": "Synapse",
+			"author": "hackolade",
+			"authorRepo": "https://github.com/hackolade",
+			"description": "Hackolade plugin for Azure Synapse (SQL Data Warehouse) and Parallel Data Warehouse",
+			"repository": "https://github.com/hackolade/Synapse"
+		},
+		{
 			"name": "TinkerPop",
 			"target": "TinkerPop",
 			"author": "hackolade",
