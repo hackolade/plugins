@@ -41,6 +41,14 @@
 			"repository": "https://github.com/hackolade/Elasticsearch"
 		},
 		{
+			"name": "EventBridge",
+			"target": "EventBridge",
+			"author": "hackolade",
+			"authorRepo": "https://github.com/hackolade",
+			"description": "Hackolade plugin for AWS EventBridge Schema Registry",
+			"repository": "https://github.com/hackolade/EventBridge"
+		},
+		{
 			"name": "Firebase",
 			"target": "FIREBASE",
 			"author": "hackolade",
