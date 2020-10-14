@@ -382,13 +382,14 @@ Different input controls can be defined for each property:
 
 1. simple text
 2. text area (pop-up text)
-3. dropdown selection
-4. numeric
-5. checkbox (boolean)
-6. properties group
-7. properties block
-8. field list
-9. field list with dropdown of attributes
+3. dropdown selection (unique)
+4. dropdown selection (multiple)
+5. numeric
+6. checkbox (boolean)
+7. properties group
+8. properties block
+9. field list
+10. field list with dropdown of attributes
 
 Each control is further described below.  The control is defined using the following syntax:  
 **propertyName** *(string)* - required; used to display label in the Properties
@@ -401,12 +402,14 @@ whitespaces are allowed.
 
 1. simple text: [text](#text)
 2. text area (pop-up text): [details](#details)
-3. dropdown selection: [select](#select)
-4. numeric: [numeric](#numeric)
-5. checkbox (boolean): [checkbox](#checkbox)
-6. properties group: [group](#group)
-7. properties block: [block](#block)
-8. field list: [tagInput](#tagInput)
+3. dropdown selection (unique): [select](#select)
+4. dropdown selection (multiple): [multiselect](#multiselect)
+5. numeric: [numeric](#numeric)
+6. checkbox (boolean): [checkbox](#checkbox)
+7. properties group: [group](#group)
+8. properties block: [block](#block)
+9. field list: [tagInput](#tagInput)
+10. field list with dropdown of attributes: [tagInputAttrib](#tagInpputAttrib)
 
 **template** *(string)* - optional; template used in the modal window if propertyType is details; possible value is: 
 details: textarea, or textareaJSON (input is validated to be JSON)
@@ -539,7 +542,7 @@ Used to add a description or comments with defined template property
 
 ![](img/4990cf2683f7599d406ff0fef9eec6a6.png)
 
-#### <a name="select"></a>2.6.3. dropdown selection
+#### <a name="select"></a>2.6.3. dropdown selection (unique)
 
 ![](img/ffca1885b1190f14c8f1b0733299b4de.png)
 
@@ -557,7 +560,25 @@ Used to add a description or comments with defined template property
 		]
 	}
 
-#### <a name="numeric"></a>2.6.4. numeric
+#### <a name="multiselect"></a>2.6.4. dropdown selection (unique)
+
+![](img/multiselect.png)
+
+	{
+	    "propertyName": "Dropdown with multiple selection",
+	    "propertyKeyword": "dropdownMulti",
+	    "propertyTooltip": "Select from list of options",
+	    "propertyType": "multipleCheckboxSelect",
+	    "options": [
+	        "Option 1",
+	        "Option 2",
+	        "Option 3",
+	        "Option 4"
+	    ]
+	}
+
+
+#### <a name="numeric"></a>2.6.5. numeric
 
 
 ![](img/numeric.png)
@@ -575,7 +596,7 @@ Used to add a description or comments with defined template property
 	},
 
 
-#### <a name="checkbox"></a>2.6.5. checkbox (boolean)
+#### <a name="checkbox"></a>2.6.6. checkbox (boolean)
 
 
 ![](img/checkbox.png)
@@ -587,7 +608,7 @@ Used to add a description or comments with defined template property
 	},
 
 
-#### <a name="group"></a>2.6.6. properties group
+#### <a name="group"></a>2.6.7. properties group
 
 ![](img/propgrp.png)
 
@@ -614,12 +635,12 @@ Used to add a description or comments with defined template property
 	}
 
 
-#### <a name="block"></a>2.6.7. properties block
+#### <a name="block"></a>2.6.8. properties block
 
 A *block* control is similar to a *group* control except for the fact that there can only be 0 or 1 block entry, whereas groups allows between 0 and multiple entries.
   
 
-#### <a name="tagInput"></a>2.6.8. field list
+#### <a name="tagInput"></a>2.6.9. field list
 
 ![](img/fieldlist.png)
 
@@ -631,7 +652,7 @@ A *block* control is similar to a *group* control except for the fact that there
 	}
 
 
-#### 2.6.9. field list with dropdown of attributes
+#### <a name="tagInpputAttrib"></a>2.6.10. field list with dropdown of attributes
 
 ![](img/fieldlistdropdown.png)
 
