@@ -560,7 +560,7 @@ Used to add a description or comments with defined template property
 		]
 	}
 
-#### <a name="multiselect"></a>2.6.4. dropdown selection (unique)
+#### <a name="multiselect"></a>2.6.4. dropdown selection (multiple)
 
 ![](img/multiselect.png)
 
