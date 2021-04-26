@@ -113,6 +113,14 @@
 			"repository": "https://github.com/Qwin/Joi"
 		},
 		{
+			"name": "MariaDB",
+			"target": "MariaDB",
+			"author": "hackolade",
+			"authorRepo": "https://github.com/hackolade",
+			"description": "Hackolade plugin for MariaDB",
+			"repository": "https://github.com/hackolade/MariaDB"
+		},
+		{
 			"name": "MarkLogic",
 			"target": "MARKLOGIC",
 			"author": "hackolade",
