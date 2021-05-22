@@ -41,6 +41,14 @@
 			"repository": "https://github.com/hackolade/CosmosDB-with-Gremlin-API"
 		},
 		{
+			"name": "DeltaLake",
+			"target": "DeltaLake",
+			"author": "hackolade",
+			"authorRepo": "https://github.com/hackolade",
+			"description": "Hackolade plugin for Delta Lake on Databricks, including Azure Databricks, and Databricks on AWS",
+			"repository": "https://github.com/hackolade/DeltaLake"
+		},
+		{
 			"name": "Elasticsearch",
 			"target": "ELASTICSEARCH",
 			"author": "hackolade",
