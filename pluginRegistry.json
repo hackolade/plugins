@@ -113,6 +113,14 @@
 			"repository": "https://github.com/hackolade/Hive"
 		},
 		{
+			"name": "JanusGraph",
+			"target": "JanusGraph",
+			"author": "hackolade",
+			"authorRepo": "https://github.com/hackolade",
+			"description": "Hackolade plugin for JanusGraph",
+			"repository": "https://github.com/hackolade/JanusGraph"
+		},
+		{
 			"name": "Joi",
 			"target": "JOI",
 			"author": "Qwin",
