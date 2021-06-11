@@ -129,6 +129,14 @@
 			"repository": "https://github.com/Qwin/Joi"
 		},
 		{
+			"name": "Neptune-Gremlin",
+			"target": "Neptune-Gremlin",
+			"author": "hackolade",
+			"authorRepo": "https://github.com/hackolade",
+			"description": "Hackolade plugin for Amazon Neptune with Gremlin API",
+			"repository": "https://github.com/hackolade/neptune-gremlin"
+		},
+		{
 			"name": "MariaDB",
 			"target": "MariaDB",
 			"author": "hackolade",
