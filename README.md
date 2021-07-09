@@ -155,6 +155,7 @@ Example:
 
  
 
+
 **target** *(object) -* provides information about target name for which the
 plugin was created; applicationTarget value must be uppercase
 
@@ -188,6 +189,7 @@ e.g.:
     "MAIN_MENU___ADD_COLLECTION": "Add Collection"
 
  
+
 If you delete any predefined property from this file - default text will be
 displayed.
 
@@ -305,10 +307,8 @@ All properties are defined as an array and have the same structure across all pr
                 {
                     "propertyName": "Comments",
                     "propertyKeyword": "comments",
-                    "shouldValidate": false,
                     "propertyTooltip": "comments",
                     "propertyType": "details",
-                    "propertyDefault": "Some comment",
                     "template": "textarea",
                     "valueType": "string"
                 }
@@ -412,28 +412,27 @@ whitespaces are allowed.
 11. select from a list of entities: selectHashed
 
 **template** *(string)* - optional; template used in the modal window if propertyType is details; possible value is: 
-details: textarea, or textareaJSON (input is validated to be JSON)
-tagInput: collectiontree
+
+- details: textarea, or textareaJSON (input is validated to be JSON)
+- tagInput: collectiontree
 
 **markdown**: *(boolean)* - optional (default = true): if "propertyType": "details" and "template": "textarea", markdown can be turned off (for example for functions)
 
 **addTimeStampButton** (*boolean*) - optional (default = false): if "propertyType": "details" and "template": "textarea", a button "Add timestamp" can be made to appear
 
-**options** *(array)* - optional: used to define options in the select input if
-propertyType is select.
+**options** *(array)* - optional: used to define options in the select input if propertyType is select.
 
 **propertyTooltip** *(string)* - optional: only taken into account for propertyTypes: text area,  dropdown, properties group, and field list
 
-**inputPlaceHolder** (*string*) - optional: hint appearing greyed out in text background****
+**inputPlaceHolder** *(string)* - optional: hint appearing greyed out in text background****
 
-**valueType** *(string)* - optional; type (one out of 7 basic types) to define
-validation rules.
+**defaultValue** *(string/number/boolean)* - optional; default value for property
+
+**valueType** *(string)* - optional; type (one out of 7 basic types) to define validation rules.
 
 **shouldValidate** *(boolean)* - optional (default = false): defines whether field should be validated or any value is allowed.  Validation rules are defined once in validationRegularExpressions.json, and are the same in any matching propertyName in any level.  
 
 **regex** *(string)* - optional: defines the regex validation for this specific property (the same propertyName could have a different validation rule elsewhere.)
-
-**propertyDefault** *(string|number|boolean)* - optional: contains default value of property. Type of value dependent on *propertyType*.
 
 **allowNegative** (*boolean*) - optional (detault = true): for numeric controls only.  Self explanatory
 
