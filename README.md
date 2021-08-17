@@ -649,8 +649,8 @@ A *block* control is similar to a *group* control except for the fact that there
     {
         "propertyName": "Field List",
         "propertyKeyword": "keyList",
-        "propertyType": "tagInput",
-        "template": "collectiontree"
+        "propertyType": "fieldList",
+        "template": "orderedList"
     }
 
 #### <a name="fieldListAttrib"></a>2.6.10. field list with dropdown of attributes
@@ -660,8 +660,8 @@ A *block* control is similar to a *group* control except for the fact that there
     {
         "propertyName": "Field List w/ dropdown",
         "propertyKeyword": "keyListOrder",
-        "propertyType": "tagInput",
-        "template": "collectiontree",
+        "propertyType": "fieldList",
+        "template": "orderedList",
         "types": [
             "ascending",
             "descending"
