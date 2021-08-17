@@ -156,6 +156,7 @@ Example:
  
 
 
+
 **target** *(object) -* provides information about target name for which the
 plugin was created; applicationTarget value must be uppercase
 
@@ -189,6 +190,7 @@ e.g.:
     "MAIN_MENU___ADD_COLLECTION": "Add Collection"
 
  
+
 
 If you delete any predefined property from this file - default text will be
 displayed.
@@ -407,14 +409,14 @@ whitespaces are allowed.
 6. checkbox (boolean): [checkbox](#checkbox)
 7. properties group: [group](#group)
 8. properties block: [block](#block)
-9. field list: [tagInput](#tagInput)
-10. field list with dropdown of attributes: [tagInputAttrib](#tagInpputAttrib)
+9. field list: [fieldList](#fieldList)
+10. field list with dropdown of attributes: [fieldListAttrib](#fieldListAttrib)
 11. select from a list of entities: selectHashed
 
 **template** *(string)* - optional; template used in the modal window if propertyType is details; possible value is: 
 
 - details: textarea, or textareaJSON (input is validated to be JSON)
-- tagInput: collectiontree
+- fieldList: orderedList
 
 **markdown**: *(boolean)* - optional (default = true): if "propertyType": "details" and "template": "textarea", markdown can be turned off (for example for functions)
 
@@ -640,7 +642,7 @@ Used to add a description or comments with defined template property
 
 A *block* control is similar to a *group* control except for the fact that there can only be 0 or 1 block entry, whereas groups allows between 0 and multiple entries.
 
-#### <a name="tagInput"></a>2.6.9. field list
+#### <a name="fieldList"></a>2.6.9. field list
 
 ![](img/fieldlist.png)
 
@@ -651,7 +653,7 @@ A *block* control is similar to a *group* control except for the fact that there
         "template": "collectiontree"
     }
 
-#### <a name="tagInpputAttrib"></a>2.6.10. field list with dropdown of attributes
+#### <a name="fieldListAttrib"></a>2.6.10. field list with dropdown of attributes
 
 ![](img/fieldlistdropdown.png)
 
