@@ -1,8 +1,8 @@
-# Hackolade NoSQL DB data modeling plugins
+# Hackolade data modeling plugins
 
-This page is the documentation for the repository of Hackolade plugins.  Plugins let anyone create support so new NoSQL databases can leverage the Hackolade data modeling engine, if they're not already natively supported in Hackolade.  Several plugins have been created by Hackolade for leading NoSQL databases, but you may build your own and have it listed in the DB Target Plugin Manager of the application.
+This page is the documentation for the repository of Hackolade plugins.  Plugins let anyone create support so new databases and data exchange protocols can leverage the core data modeling engine of Hackolade, if they're not already supported.  Several plugins have been created by Hackolade for leading NoSQL database targets, but you may build your own and have it listed in the Target Plugin Manager of the application.
 
-The plugin architecture of Hackolade lets you create your own NoSQL database ‘targets’, respecting its characteristics, through a combination of configuration and custom JavaScript code.  Custom JS code is only necessary for Reverse- and Forward-Engineering.
+The plugin architecture of Hackolade lets you create your own ‘targets’, respecting its characteristics, through a combination of configuration and custom JavaScript code.  Custom JS code is only necessary for Reverse- and Forward-Engineering.
 
 **Note** that targets are not limited to NoSQL databases!  The Hackolade data modeling engine is applicable also to file formats, serialization IDLs, API definitions, relational databases, etc.
 
@@ -17,17 +17,11 @@ This guide walks you through the steps to create your own plugin in your own Git
 
 ## <a name="preparation"></a>1. Overview and preparation
 
-Each NoSQL database has its own personality: terminology, storage
-approach, primary keys, data types, indexing, partitioning/sharding, API, query language, etc...
-At Hackolade, after adapting our engine to a couple of rather different NoSQL
-vendors, we quickly realized that we were going to have a hard time keeping up
-with the frequent appearance of new databases on the market. So, in order to
-unleash the power of our data modeling engine, we decided to rewrite the
-application and open up our features through a plugin architecture.
+Each target has its own personality: terminology, storage approach, primary keys, data types, indexing, partitioning/sharding, API, query language, etc...
 
-With the customization of the properties pane, you're able to control attributes
-specific to each DB at the following levels: model, container, entity,
-field/attribute, indexing, sharding, etc...
+At Hackolade, after adapting our engine to a couple of rather different NoSQL vendors, we quickly realized that we were going to have a hard time keeping up with the frequent appearance of new databases on the market. So, in order to unleash the power of our core data modeling engine, we decided to rewrite the application and open up our features through a plugin architecture.
+
+With the customization of the properties pane, you're able to control attributes specific to each DB at the following levels: model, container, entity, field/attribute, indexing, sharding, etc...
 
 The customization is performed through the configuration of the following modules:
 
