@@ -151,6 +151,7 @@ Example:
 
 
 
+
 **target** *(object) -* provides information about target name for which the
 plugin was created; applicationTarget value must be uppercase
 
@@ -184,6 +185,7 @@ e.g.:
     "MAIN_MENU___ADD_COLLECTION": "Add Collection"
 
  
+
 
 
 If you delete any predefined property from this file - default text will be
@@ -418,6 +420,8 @@ whitespaces are allowed.
 
 **options** *(array)* - optional: used to define options in the select input if propertyType is select.
 
+**cleanDependency** (*boolean*) - optional (default = false): used to remove related properties when the user chooses a different option.
+
 **propertyTooltip** *(string)* - optional: only taken into account for propertyTypes: text area,  dropdown, properties group, and field list
 
 **inputPlaceHolder** *(string)* - optional: hint appearing greyed out in text background****
@@ -430,6 +434,8 @@ whitespaces are allowed.
 
 **regex** *(string)* - optional: defines the regex validation for this specific property (the same propertyName could have a different validation rule elsewhere.)
 
+**typeDecorator** (*boolean*) - optional (default = true): if false, turns off the display of length in parenthesis in ERD, e.g. for varchar data type instead of *varchar(4000)*.
+
 **allowNegative** (*boolean*) - optional (detault = true): for numeric controls only.  Self explanatory
 
 **minValue** (*number*) - optional: for numeric controls only. Self explanatory
@@ -437,21 +443,21 @@ whitespaces are allowed.
 **maxValue** (*number*) - optional: for numeric controls only. Self explanatory
 
 **dependency** *(object)* - optional: contains an object with a key and arguments determining whether or not to display this property.  
-Example of a simple dependency, testing the value of a previous property:
+Example of a simple dependency, testing the value of a property:
 
         "dependency": {
             "key": "type",
             "value": "string"
         }
 
-Example of a dependency, testing for the presence of a previous property:
+Example of a dependency, testing for the presence of a property:
 
         "dependency": {
             "key": "name",
             "exists": false
         }
 
-Example of a dependency, testing for the properties of the string characteristics of another property:
+Example of a dependency, testing for the properties of the string characteristics of a property:
 
         "dependency": {
             "key": "name",
@@ -459,14 +465,21 @@ Example of a dependency, testing for the properties of the string characteristic
             "maxLength": 10
         }
 
-Example of a dependency, testing for the properties of the regex pattern value of another property:
+Example of a dependency, testing for the properties of the regex pattern value of a property:
 
         "dependency": {
             "key": "name",
             "pattern": "^(H|h)ackolade (2.5.8|3.0.2)$"
         }
 
-Example of a dependency, testing for the properties of the numeric value of another property:
+Example of a dependency, testing for multiple values of a property (equivalent to an *or* operator):
+
+    	"dependency": {
+    		"key": "mode",
+    		"value": ["char","varchar", "bit", "varbit"]
+    	}
+
+Example of a dependency, testing for the properties of the numeric value of a property:
 
         "dependency": {
             "key": "amount",
@@ -514,6 +527,8 @@ Example of a dependency combining *and* and *or* operators:
          "exist": true, - if the property with "key" exists on current entity this property is disabled,
          or "value" - if "key" is equal to "value" this property is disabled 
     }
+
+
 
 For your properties, you may choose among a number of input controls:
 
