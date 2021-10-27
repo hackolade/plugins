@@ -152,6 +152,7 @@ Example:
 
 
 
+
 **target** *(object) -* provides information about target name for which the
 plugin was created; applicationTarget value must be uppercase
 
@@ -185,6 +186,7 @@ e.g.:
     "MAIN_MENU___ADD_COLLECTION": "Add Collection"
 
  
+
 
 
 
@@ -516,7 +518,7 @@ Example of a dependency combining *and* and *or* operators:
             ]
         }
 
-**enableForReference** (*boolean*) - optional: by default, properties of references to a definition (local, model or external) are typically disabled.  By setting this to *true*, the property is enabled for editing, e.g. required.
+**enableForReference** (*boolean*) - optional: by default, properties of references to a definition (local, model or external) are typically disabled.  By setting this to *true*, the property can be editable in the reference and its value has higher priority than the same property value from the referenced definition.  So, when the reference is resolved, the properties values will be taken from the reference (if present) and not from its definition.
 
 **disabledOption** (*boolean*) - optional (default = false): only applicable to "propertyKeyword": "dropdownProp" if the dropdown list must appear in grey and disabled.
 

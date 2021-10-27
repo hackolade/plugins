@@ -193,6 +193,14 @@
 			"repository": "https://github.com/hackolade/Parquet"
 		},
 		{
+			"name": "Protobuf",
+			"target": "protobuf",
+			"author": "hackolade",
+			"authorRepo": "https://github.com/hackolade",
+			"description": "Hackolade plugin for Protocol Buffers gRPC/Protobuf schema",
+			"repository": "https://github.com/hackolade/Protobuf"
+		},
+		{
 			"name": "Redshift",
 			"target": "Redshift",
 			"author": "hackolade",
