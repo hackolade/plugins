@@ -193,6 +193,14 @@
 			"repository": "https://github.com/hackolade/Parquet"
 		},
 		{
+			"name": "PostgreSQL",
+			"target": "PostgreSQL",
+			"author": "hackolade",
+			"authorRepo": "https://github.com/hackolade",
+			"description": "Hackolade plugin for PostgreSQL and EnterpriseDB",
+			"repository": "https://github.com/hackolade/PostgreSQL"
+		},
+		{
 			"name": "Protobuf",
 			"target": "protobuf",
 			"author": "hackolade",
