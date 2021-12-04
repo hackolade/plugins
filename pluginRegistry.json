@@ -49,6 +49,14 @@
 			"repository": "https://github.com/hackolade/DeltaLake"
 		},
 		{
+			"name": "DocumentDB",
+			"target": "DocumentDB",
+			"author": "hackolade",
+			"authorRepo": "https://github.com/hackolade",
+			"description": "Hackolade plugin for Amazon DocumentDB",
+			"repository": "https://github.com/hackolade/DocumentDB"
+		},
+		{
 			"name": "Elasticsearch",
 			"target": "ELASTICSEARCH",
 			"author": "hackolade",
