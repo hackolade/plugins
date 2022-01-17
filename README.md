@@ -153,6 +153,7 @@ Example:
 
 
 
+
 **target** *(object) -* provides information about target name for which the
 plugin was created; applicationTarget value must be uppercase
 
@@ -186,6 +187,7 @@ e.g.:
     "MAIN_MENU___ADD_COLLECTION": "Add Collection"
 
  
+
 
 
 
@@ -529,6 +531,16 @@ Example of a dependency combining *and* and *or* operators:
          "exist": true, - if the property with "key" exists on current entity this property is disabled,
          or "value" - if "key" is equal to "value" this property is disabled 
     }
+
+**requiredProperty** (*boolean*) - optional (default = false): adds an asterisk next to the property name in the Properties Pane.
+
+**validation** (*object*) - optional: adds a warning badge in case no value is in the property, with a tooltip message:
+
+    	"requiredProperty": true,
+    	"validation": {
+    		"required": true,
+    		"message": "Required property"
+    	}
 
 
 
