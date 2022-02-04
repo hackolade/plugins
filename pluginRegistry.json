@@ -193,6 +193,14 @@
 			"repository": "https://github.com/hackolade/OpenAPI"
 		},
 		{
+			"name": "Oracle",
+			"target": "Oracle",
+			"author": "hackolade",
+			"authorRepo": "https://github.com/hackolade",
+			"description": "Hackolade plugin for Oracle with JSON support",
+			"repository": "https://github.com/hackolade/Oracle"
+		},
+		{
 			"name": "Parquet",
 			"target": "PARQUET",
 			"author": "hackolade",
