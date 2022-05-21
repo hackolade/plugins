@@ -161,14 +161,6 @@
 			"repository": "https://github.com/hackolade/MarkLogic"
 		},
 		{
-			"name": "MonStor",
-			"target": "MonStor",
-			"author": "hackolade",
-			"authorRepo": "https://github.com/hackolade",
-			"description": "Hackolade plugin for MonStor",
-			"repository": "https://github.com/hackolade/MonStor"
-		},
-		{
 			"name": "SQLServer",
 			"target": "MSSQLServer",
 			"author": "hackolade",
