@@ -263,6 +263,14 @@
 			"authorRepo": "https://github.com/hackolade",
 			"description": "Hackolade plugin for TinkerPop",
 			"repository": "https://github.com/hackolade/tinkerpop"
+		},
+		{
+			"name": "YugabyteDB-YSQL",
+			"target": "YugabyteDB-YSQL",
+			"author": "hackolade",
+			"authorRepo": "https://github.com/hackolade",
+			"description": "Hackolade plugin for YugabyteDB YSQL API",
+			"repository": "https://github.com/hackolade/YugabyteDB-YSQL"
 		}
 	]
 }
