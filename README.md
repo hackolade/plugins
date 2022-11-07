@@ -154,6 +154,7 @@ Example:
 
 
 
+
 **target** *(object) -* provides information about target name for which the
 plugin was created; applicationTarget value must be uppercase
 
@@ -187,6 +188,7 @@ e.g.:
     "MAIN_MENU___ADD_COLLECTION": "Add Collection"
 
  
+
 
 
 
@@ -573,6 +575,14 @@ Used to add a description or comments with defined template property
     }
 
 ![](img/4990cf2683f7599d406ff0fef9eec6a6.png)
+
+
+
+Note that you can also display clickable URLs by specifying:
+
+				"propertyType": "editableLink",
+				"template": "textarea",
+				"markdown": true
 
 #### <a name="select"></a>2.6.3. dropdown selection (unique)
 
