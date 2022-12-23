@@ -161,6 +161,14 @@
 			"repository": "https://github.com/hackolade/MarkLogic"
 		},
 		{
+			"name": "MySQL",
+			"target": "MySQL",
+			"author": "hackolade",
+			"authorRepo": "https://github.com/hackolade",
+			"description": "Hackolade plugin for MySQL",
+			"repository": "https://github.com/hackolade/MySQL"
+		},
+		{
 			"name": "SQLServer",
 			"target": "MSSQLServer",
 			"author": "hackolade",
