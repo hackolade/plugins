@@ -265,6 +265,14 @@
 			"repository": "https://github.com/hackolade/Synapse"
 		},
 		{
+			"name": "Teradata",
+			"target": "Teradata",
+			"author": "hackolade",
+			"authorRepo": "https://github.com/hackolade",
+			"description": "Hackolade plugin for Teradata (Vantage)",
+			"repository": "https://github.com/hackolade/Teradata"
+		},
+		{
 			"name": "TinkerPop",
 			"target": "TinkerPop",
 			"author": "hackolade",
