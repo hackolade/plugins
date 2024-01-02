@@ -17,6 +17,14 @@
 			"repository": "https://github.com/hackolade/Cassandra"
 		},
 		{
+			"name": "CockroachDB",
+			"target": "CockroachDB",
+			"author": "hackolade",
+			"authorRepo": "https://github.com/hackolade",
+			"description": "Hackolade plugin for CockroachDB",
+			"repository": "https://github.com/hackolade/CockroachDB"
+		},
+		{
 			"name": "CosmosDB-with-SQL-API",
 			"target": "COSMOSDB-SQL",
 			"author": "hackolade",
