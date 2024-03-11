@@ -49,6 +49,14 @@
 			"repository": "https://github.com/hackolade/CosmosDB-with-Gremlin-API"
 		},
 		{
+			"name": "CouchbaseV7Plus",
+			"target": "CouchbaseV7Plus",
+			"author": "hackolade",
+			"authorRepo": "https://github.com/hackolade",
+			"description": "Hackolade plugin for Couchbase v7+ with scopes and collections",
+			"repository": "https://github.com/hackolade/CouchbaseV7Plus"
+		},
+		{
 			"name": "DeltaLake",
 			"target": "DeltaLake",
 			"author": "hackolade",
