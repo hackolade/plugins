@@ -58,6 +58,33 @@ Hackolade configurations.  But you may want to create additional properties and 
 <img src="img/Custom-props.png" alt="property controls" width="30%" height="30%">
 
 The same controls can be used to define information in different properties panes and lower tabs, for example for indexing, sharding, etc..
+
+It is possible to customize validation of input via Regular Expression by editing the file 
+
+`C:\Users\%username%\.hackolade\options\<target>\customProperties\validation\validationRegularExpressions.json`
+
+for example will all of the following (or a subset of it depending on your needs), each with its own regex validation:
+
+ `{`
+
+​        `"description": "^[^|]+$", //description-SQL COMMENT for all levels`
+
+​        `"comments": "^[^|]+$", //remarks for all levels`
+
+​        `"modelName": "^[A-Z_ ]+$", // business names for models`
+
+​        `"containerName": "^[A-Z_ ]+$", // business names for containers`
+
+​        `"collectionName": "^[A-Z_ ]+$", // business names for entities`
+
+​        `"name": "^[A-Z_ ]+$", // business names for attributes`
+
+​        `"code": "^[a-z0-9_]+$", // technical names for all objects at all levels`
+
+​        `"relationshipName": "^[A-Z_ ]+$" //relationship names`
+
+`}`
+
 <br>
 
 ### <a name="prepConnection"></a>1.4 Connection and authentication parameters
@@ -155,6 +182,7 @@ Example:
 
 
 
+
 **target** *(object) -* provides information about target name for which the
 plugin was created; applicationTarget value must be uppercase
 
@@ -188,6 +216,7 @@ e.g.:
     "MAIN_MENU___ADD_COLLECTION": "Add Collection"
 
  
+
 
 
 
