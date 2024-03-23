@@ -67,21 +67,21 @@ for example will all of the following (or a subset of it depending on your needs
 
  `{
 
-​        "description": "^[^|]+$", //description-SQL COMMENT for all levels`
+​        "description": "^[^|]+$", //description-SQL COMMENT for all levels
 
-​        "comments": "^[^|]+$", //remarks for all levels`
+​        "comments": "^[^|]+$", //remarks for all levels
 
-​        "modelName": "^[A-Z_ ]+$", // business names for models`
+​        "modelName": "^[A-Z_ ]+$", // business names for models
 
-​        "containerName": "^[A-Z_ ]+$", // business names for containers`
+​        "containerName": "^[A-Z_ ]+$", // business names for containers
 
-​        "collectionName": "^[A-Z_ ]+$", // business names for entities`
+​        "collectionName": "^[A-Z_ ]+$", // business names for entities
 
-​        "name": "^[A-Z_ ]+$", // business names for attributes`
+​        "name": "^[A-Z_ ]+$", // business names for attributes
 
-​        "code": "^[a-z0-9_]+$", // technical names for all objects at all levels`
+​        "code": "^[a-z0-9_]+$", // technical names for all objects at all levels
 
-​        "relationshipName": "^[A-Z_ ]+$" //relationship names`
+​        "relationshipName": "^[A-Z_ ]+$" //relationship names
 
 }`
 
