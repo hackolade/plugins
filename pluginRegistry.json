@@ -57,6 +57,14 @@
 			"repository": "https://github.com/hackolade/CouchbaseV7Plus"
 		},
 		{
+			"name": "Db2",
+			"target": "Db2",
+			"author": "hackolade",
+			"authorRepo": "https://github.com/hackolade",
+			"description": "Hackolade plugin for IBM Db2 for LUW (Linux, Unix, and Windows",
+			"repository": "https://github.com/hackolade/Db2"
+		},
+		{
 			"name": "DeltaLake",
 			"target": "DeltaLake",
 			"author": "hackolade",
