@@ -176,6 +176,7 @@ Example:
 
 
 
+
 **target** *(object) -* provides information about target name for which the
 plugin was created; applicationTarget value must be uppercase
 
@@ -209,6 +210,7 @@ e.g.:
     "MAIN_MENU___ADD_COLLECTION": "Add Collection"
 
  
+
 
 
 
@@ -322,10 +324,10 @@ Inside each folder there’s a **[LEVELNAME]LevelConfig.json** file which contai
 You can add **defaultData.json** file to a **properties_pane** folder to define
 default values to be displayed in the properties pane. 
 
-#### 2.5.2 Lower tab properties pane
+#### 2.5.2 Tab properties pane
 
 Each **\*.json** file represents an array with objects. Each object has
-configurations for a particular tab. Tab name is defined in **lowerTab** property.
+configurations for a particular tab. Tab name is defined in **lowerTab** property.  Note: the Properties Pane tabs used to be at the bottom in earlier versions of the application.  
 All properties are defined as an array and have the same structure across all properties pane configurations. Here’s an example of details tab with one property **comments:**
 
     [
@@ -348,8 +350,9 @@ All properties are defined as an array and have the same structure across all pr
 
 ![](img/0c6b56452ae3d2c9381d6fec0d3fa2d6.png)
 
-**structure** property represents a collection of objects, each describing field
-type and behavior.
+**structure** property represents a collection of objects, each describing field type and behavior.
+
+
 
 #### 2.5.3. Container Level Keys
 
@@ -471,6 +474,8 @@ whitespaces are allowed.
 **minValue** (*number*) - optional: for numeric controls only. Self explanatory
 
 **maxValue** (*number*) - optional: for numeric controls only. Self explanatory
+
+**includeInScript** *(boolean)* - optional; determines whether the property should be included in the forward-engineering script
 
 **dependency** *(object)* - optional: contains an object with a key and arguments determining whether or not to display this property.  
 Example of a simple dependency, testing the value of a property:
