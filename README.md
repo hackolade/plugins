@@ -177,6 +177,7 @@ Example:
 
 
 
+
 **target** *(object) -* provides information about target name for which the
 plugin was created; applicationTarget value must be uppercase
 
@@ -210,6 +211,7 @@ e.g.:
     "MAIN_MENU___ADD_COLLECTION": "Add Collection"
 
  
+
 
 
 
@@ -453,7 +455,7 @@ whitespaces are allowed.
 
 **options** *(array)* - optional: used to define options in the select input if propertyType is select.
 
-**cleanDependency** (*boolean*) - optional (default = false): used to remove related properties when the user chooses a different option.
+**cleanDependency** (*boolean*) - optional (default = false) - deprecated from v7.6.1: used to reset related properties to their default values when the user chooses a different option. When the related property doesn’t have default value, it will not be changed. When there are few configurations for the same *propertyKeyword*, the property will not be changed as well.
 
 **propertyTooltip** *(string)* - optional: only taken into account for propertyTypes: text area,  dropdown, properties group, and field list
 
