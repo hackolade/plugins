@@ -178,6 +178,7 @@ Example:
 
 
 
+
 **target** *(object) -* provides information about target name for which the
 plugin was created; applicationTarget value must be uppercase
 
@@ -211,6 +212,7 @@ e.g.:
     "MAIN_MENU___ADD_COLLECTION": "Add Collection"
 
  
+
 
 
 
@@ -552,6 +554,21 @@ Example of a dependency combining *and* and *or* operators:
                 }
             ]
         }
+
+As you can above, you can use for your dependency a keyword located at a different level.  To avoid any risk of confusion if you use the same keyword at different levels, it is recommended to use the dot notation based on the root level.
+
+			{
+				"propertyName": "Enabled",
+				"propertyKeyword": "configEnabled",
+				"propertyType": "checkbox",
+				"dependency": {
+					"level": "objectRoot",
+					"key": "dbtLabs.semanticComponent",
+					"value": "metric"
+				}
+			},
+
+
 
 **enableForReference** (*boolean*) - optional: by default, properties of references to a definition (local, model or external) are typically disabled.  By setting this to *true*, the property can be editable in the reference and its value has higher priority than the same property value from the referenced definition.  So, when the reference is resolved, the properties values will be taken from the reference (if present) and not from its definition.
 
