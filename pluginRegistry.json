@@ -128,6 +128,14 @@
 			"description": "Hackolade plugin for AWS Glue Data Catalog",
 			"repository": "https://github.com/hackolade/glue"
 		},
+        {
+            "name": "GraphQL",
+            "target": "GraphQL",
+            "author": "hackolade",
+            "authorRepo": "https://github.com/hackolade",
+            "description": "Hackolade plugin for GraphQL schema SDL",
+            "repository": "https://github.com/hackolade/GraphQL"
+        },
 		{
 			"name": "HBase",
 			"target": "HBase",
